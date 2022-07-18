@@ -41,7 +41,12 @@ const City2 = () => {
     }, [])
 
     return (
-        <div></div>
+        <div className="city2-container">
+            <div className="city2-attributes">
+                <h1>{city2Name}</h1>
+                <p>{city2Attributes}</p>
+            </div>
+        </div>
     )
 }
 

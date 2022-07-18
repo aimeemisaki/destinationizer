@@ -1,22 +1,13 @@
 import React from 'react';
+import City1 from '../Components/City1'
+import City2 from '../Components/City2'
 
-const Compare = ({ city1Name, city1Attributes, city2Name, city2Attributes }) => {
-    // useStates for city names
+const Compare = () => {
 
-  
-    // get data from form 
-
-    
     return (
         <div className="compare-container">
-            <div className="city1-list-attributes">
-                <h1>{city1Name}</h1>
-                <p>{city1Attributes}</p>
-            </div>
-            <div className="city2-list-attributes">
-                <h1>{city2Name}</h1>
-                <p>{city2Attributes}</p>
-            </div>
+            <City1 />
+            <City2 />
         </div>
     )
 

@@ -24,7 +24,6 @@ const City1 = () => {
                 }
             };
             setCity1Attributes(newCity1Attributes);
-            console.log(newCity1Attributes)
 
             let newCity1Name = data.data.attributes.name;
             setCity1Name(newCity1Name)
@@ -39,7 +38,12 @@ const City1 = () => {
     getCity1()
     }, [])
   return (
-    <div></div>
+        <div className="city1-container">
+            <div className="city1-list-attributes">
+                <h1>{city1Name}</h1>
+                <p>{city1Attributes}</p>
+            </div>
+        </div>
   )
     
 }
