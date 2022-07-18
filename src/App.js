@@ -1,25 +1,54 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useEffect } from 'react';
+import Form from './Pages/Form';
+import Compare from './Pages/Compare';
+import Book from './Pages/Book';
+import NavBar from './Components/NavBar'
+
 
 function App() {
+
+    const options = {
+      'headers': {
+        'Authorization': 'Basic YzUyYjczZDk1NTIxOThhNTM3YzA5MDA4OThlOWQ1NTE6MTkxMGQ2M2IxYmFlY2Q4NTMyOTAzNzcwN2JlMDhhZjE=',
+      }
+      // 'destionation_type': 'State',
+      // 'name': 'CA'
+    };
+    
+  
+    const getData = () => {
+      fetch('https://api.roadgoat.com/api/v2/destinations/los-angeles-ca-usa', options)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          console.log(result)
+        },
+        (error) => {
+          console.log(error)
+        }
+      )
+    }
+  
+    useEffect(() => {
+      getData()
+    }, [])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavBar />
+      <Form />
+      <main>
+        {/* <Routes>
+          <Route path ="/" element={<Form />} />
+          <Route path="/compare" element= {<Compare />} />
+          <Route path="/book" element={<Book />} />
+          <Route path="*" element={<Navigate to ="/" />} />
+        </Routes> */}
+      </main>
     </div>
   );
 }
 
-export default App;
+export default App
