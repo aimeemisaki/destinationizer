@@ -17,15 +17,15 @@ const City1 = () => {
         .then(res => res.json())
         .then(
           (data) => {
+            let city1Arr = []
             let newCity1Attributes = () => {
                 for (let i=0; i<data.included.length; i++) {
                     if (data.included[i].type.includes('known_for')) {
-                      return data.included[i].attributes.name
+                        city1Arr.push(data.included[i].attributes.name)
                     } 
-                }
+                } console.log(city1Arr)
             };
-            setCity1Attributes(newCity1Attributes);
-            console.log(city1Attributes)
+            setCity1Attributes(city1Arr);
 
             let newCity1Name = data.data.attributes.name;
             setCity1Name(newCity1Name)
@@ -38,7 +38,7 @@ const City1 = () => {
 
     useEffect(() => {
     getCity1()
-    })
+    }, [])
 
   return (
         <div className="city1-container">
