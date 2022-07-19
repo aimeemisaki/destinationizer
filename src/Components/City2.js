@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const City2 = () => {
-    const [city2Name, setCity2Name] = useState()
+    const [city2Name, setCity2Name] = useState('')
     const [city2Attributes, setCity2Attributes] = useState()
     const [city2Img, setCity2Img] = useState()
 
@@ -27,8 +27,6 @@ const City2 = () => {
 
             let newCity2Name = data.data.attributes.name;
             setCity2Name(newCity2Name)
-
-            console.log(data.included)
             // console.log(data.data.attributes.airbnb_url)
             // console.log(data.data.attributes.kayak_car_rental_url)
         },

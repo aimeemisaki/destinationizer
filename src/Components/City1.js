@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 const City1 = () => {
 
-    const [city1Name, setCity1Name] = useState()
-    const [city1Attributes, setCity1Attributes] = useState()
+    const [city1Name, setCity1Name] = useState('')
+    const [city1Attributes, setCity1Attributes] = useState('')
     const [city1Img, setCity1Img] = useState()
 
     const options = {
@@ -21,7 +21,7 @@ const City1 = () => {
                 for (let i=0; i<data.included.length; i++) {
                     if (data.included[i].type.includes('known_for')) {
                       return data.included[i].attributes.name
-                    } i++
+                    } 
                 }
             };
             setCity1Attributes(newCity1Attributes);
@@ -29,8 +29,6 @@ const City1 = () => {
 
             let newCity1Name = data.data.attributes.name;
             setCity1Name(newCity1Name)
-
-            console.log(data.data.attributes)
           },
           (error) => {
             console.log(error)
