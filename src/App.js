@@ -1,27 +1,28 @@
-import './App.css';
-import React, { useEffect } from 'react';
+// import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Form from './Pages/Form';
 import Compare from './Pages/Compare';
 import Book from './Pages/Book';
-import NavBar from './Components/NavBar'
+import Navigation from './Components/Navigation';
 
 
 function App() {
 
   return (
-    <div>
-      <NavBar />
-      <Compare />
+    <>
+      <Navigation />
       <main>
-        {/* <Routes>
+      <Compare />
+        <Routes>
           <Route path ="/" element={<Form />} />
           <Route path="/compare" element= {<Compare />} />
           <Route path="/book" element={<Book />} />
           <Route path="*" element={<Navigate to ="/" />} />
-        </Routes> */}
+        </Routes>
       </main>
-    </div>
+    </>
   );
 }
 

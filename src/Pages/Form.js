@@ -2,13 +2,16 @@ import React, { useState } from 'react';
 
 const Form = () => {
     // useState for city search
-    const initialState = {
-        city1: '',
-        city2: ''
+    const initialState1 = {
+        city1: ''
     };
 
-    const [city1, setCity1] = useState(initialState)
-    const [city2, setCity2] = useState(initialState)
+    const initialState2 = {
+        city2: ''
+    }
+
+    const [city1, setCity1] = useState(initialState1)
+    const [city2, setCity2] = useState(initialState2)
     // handleChange
     const handleChange = (event) => {
         setCity1({...city1, [event.target.id]: event.target.value})
@@ -17,8 +20,8 @@ const Form = () => {
     // handleSubmit 
     const handleSubmit = (event) => {
         event.preventDefault()
-        setCity1(initialState)
-        setCity2(initialState)
+        setCity1(initialState1)
+        setCity2(initialState2)
     }
     // loading animation 
 

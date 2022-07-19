@@ -38,7 +38,7 @@ const City2 = () => {
     }
     useEffect(() => {
     getCity2()
-    }, [])
+    })
 
     return (
         <div className="city2-container">

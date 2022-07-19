@@ -24,6 +24,7 @@ const City1 = () => {
                 }
             };
             setCity1Attributes(newCity1Attributes);
+            console.log(city1Attributes)
 
             let newCity1Name = data.data.attributes.name;
             setCity1Name(newCity1Name)
@@ -36,7 +37,8 @@ const City1 = () => {
 
     useEffect(() => {
     getCity1()
-    }, [])
+    })
+
   return (
         <div className="city1-container">
             <div className="city1-list-attributes">
