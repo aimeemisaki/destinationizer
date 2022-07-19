@@ -4,6 +4,7 @@ const City1 = () => {
 
     const [city1Name, setCity1Name] = useState()
     const [city1Attributes, setCity1Attributes] = useState()
+    const [city1Img, setCity1Img] = useState()
 
     const options = {
         'headers': {
@@ -16,11 +17,11 @@ const City1 = () => {
         .then(res => res.json())
         .then(
           (data) => {
-            const newCity1Attributes = () => {
+            let newCity1Attributes = () => {
                 for (let i=0; i<data.included.length; i++) {
                     if (data.included[i].type.includes('known_for')) {
                       return data.included[i].attributes.name
-                    }
+                    } i++
                 }
             };
             setCity1Attributes(newCity1Attributes);
@@ -28,6 +29,8 @@ const City1 = () => {
 
             let newCity1Name = data.data.attributes.name;
             setCity1Name(newCity1Name)
+
+            console.log(data.data.attributes)
           },
           (error) => {
             console.log(error)
