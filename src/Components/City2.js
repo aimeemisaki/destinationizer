@@ -7,6 +7,7 @@ const City2 = ( { city2 }) => {
 
       
     const getCity2 = () => {
+        if (city2) {
         // setting city1Attributes to array with 'known_for' attributes pushed  
         let city2Arr = []
         for (let i=0; i<city2.included.length; i++) {
@@ -15,25 +16,33 @@ const City2 = ( { city2 }) => {
             } 
         }
         setCity2Attributes(city2Arr);
-        // console.log(city2Arr)
-
-
         // setting city name to newCityName
-        // let newCity2Name = city2.data.attributes.name;
-        // setCity2Name(newCity2Name)
+        let newCity2Name = city2.data.attributes.name;
+        setCity2Name(newCity2Name)
         // console.log(data.data.attributes.airbnb_url)
         // console.log(data.data.attributes.kayak_car_rental_url)
+        }
     }
     
     useEffect(() => {
-    getCity2()
-    },[])
+        getCity2()
+    },[city2])
 
+    if(!city2) {
+        return null
+    }
     return (
         <div className="city2-container">
             <div className="city2-attributes">
                 <h1>{city2Name}</h1>
-                <p>{city2Attributes}</p>
+                <ul>
+                    {city2Attributes && city2Attributes.map(city2Attribute  => (
+                        <li 
+                        key={city2Attribute.id}>
+                        {city2Attribute}
+                        </li>
+                    ))}
+                </ul>
             </div>
         </div>
     )

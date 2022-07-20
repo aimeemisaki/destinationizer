@@ -11,13 +11,12 @@ const City1 = ({ city1 }) => {
     const getCity1 = () => {
         if (city1) {
         let city1Arr = []
-            for (let i=0; i<city1.included.length; i++) {
-                if (city1.included[i].type.includes('known_for')) {
-                    city1Arr.push(city1.included[i].attributes.name)
-                } 
-            }
+        for (let i=0; i<city1.included.length; i++) {
+            if (city1.included[i].type.includes('known_for')) {
+                city1Arr.push(city1.included[i].attributes.name)
+            } 
+        }
         setCity1Attributes(city1Arr);
-        console.log(city1Arr)
         // setting city name to newCityName
         let newCity1Name = city1.data.attributes.name;
         setCity1Name(newCity1Name)
