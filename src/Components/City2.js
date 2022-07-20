@@ -6,15 +6,13 @@ const City2 = ( { city2 }) => {
     // const [city2Img, setCity2Img] = useState()
 
       
-    const getCity2 = (city1) => {
+    const getCity2 = () => {
         // setting city1Attributes to array with 'known_for' attributes pushed  
         let city2Arr = []
-        let getCity2Attributes = () => {
-            for (let i=0; i<city2.included.length; i++) {
-                if (city2.included[i].type.includes('known_for')) {
-                    city2Arr.push(city2.included[i].attributes.name)
-                } 
-            }
+        for (let i=0; i<city2.included.length; i++) {
+            if (city2.included[i].type.includes('known_for')) {
+                city2Arr.push(city2.included[i].attributes.name)
+            } 
         }
         setCity2Attributes(city2Arr);
         // console.log(city2Arr)
