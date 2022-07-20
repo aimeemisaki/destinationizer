@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import Button from 'react-bootstrap/Button'
+import { Link } from 'react-router-dom';
+
 
 const City2 = ( { city2 }) => {
     const [city2Name, setCity2Name] = useState('')
@@ -44,6 +47,14 @@ const City2 = ( { city2 }) => {
                     ))}
                 </ul>
             </div>
+            <Button
+            className ="d-grid gap-2" 
+            variant="secondary" 
+            size="lg">
+                <Link to="/book">
+                    Book this city!
+                </Link>
+            </Button>
         </div>
     )
 }

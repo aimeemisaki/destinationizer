@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Button from 'react-bootstrap/Button'
+import { Link } from 'react-router-dom'
 
 const City1 = ({ city1 }) => {
 
@@ -43,6 +45,15 @@ if (!city1) {
                     ))}
                 </ul>
             </div>
+            <Button
+            className ="d-grid gap-2" 
+            variant="secondary" 
+            size="lg">
+                <Link to='/book'>
+                    Book this city!
+                </Link>
+            </Button>
+            
         </div>
   )
     

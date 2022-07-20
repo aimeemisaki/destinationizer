@@ -13,7 +13,6 @@ function App() {
 
   const [city1, setCity1] = useState()
   const [city2, setCity2] = useState()
-  console.log(city1)
 
   const [search1, setSearch1] = useState('')
   const [search2, setSearch2] = useState('')
