@@ -1,40 +1,27 @@
 import React, { useState, useEffect } from 'react';
 
-const City1 = () => {
+const City1 = ({ city1 }) => {
 
     const [city1Name, setCity1Name] = useState('')
-    const [city1Attributes, setCity1Attributes] = useState('')
-    const [city1Img, setCity1Img] = useState()
+    const [city1Attributes, setCity1Attributes] = useState([])
+    // const [city1Img, setCity1Img] = useState()
 
-    const options = {
-        'headers': {
-          'Authorization': 'Basic YzUyYjczZDk1NTIxOThhNTM3YzA5MDA4OThlOWQ1NTE6MTkxMGQ2M2IxYmFlY2Q4NTMyOTAzNzcwN2JlMDhhZjE=',
-        }
-      };
     
-    const getCity1 = () => {
-        fetch('https://api.roadgoat.com/api/v2/destinations/los-angeles-ca-usa', options)
-        .then(res => res.json())
-        .then(
-          (data) => {
-            let city1Arr = []
-            let newCity1Attributes = () => {
-                for (let i=0; i<data.included.length; i++) {
-                    if (data.included[i].type.includes('known_for')) {
-                        city1Arr.push(data.included[i].attributes.name)
-                    } 
-                } console.log(city1Arr)
-            };
-            setCity1Attributes(city1Arr);
-
-            let newCity1Name = data.data.attributes.name;
-            setCity1Name(newCity1Name)
-          },
-          (error) => {
-            console.log(error)
-          }
-        )
-      }
+    const getCity1 = (city1) => {
+        // setting city1Attributes to array with 'known_for' attributes pushed  
+        let city1Arr = []
+        let getCity1Attributes = () => {
+            for (let i=0; i<city1.included.length; i++) {
+                if (city1.included[i].type.includes('known_for')) {
+                    city1Arr.push(city1.included[i].attributes.name)
+                } 
+            } 
+        } 
+        setCity1Attributes(city1Arr);
+        // setting city name to newCityName
+        // let newCity1Name = city1.data.attributes.name;
+        // setCity1Name(newCity1Name)
+    }
 
     useEffect(() => {
     getCity1()
