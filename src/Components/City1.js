@@ -53,7 +53,7 @@ if (!city1) {
         size="lg"
         target="_blank"
         style={{ marginTop: "1em"}}>
-        <Link to='/book'>
+        <Link to='/book/q?=1'>
             Book this city!
         </Link>
         </Button>
