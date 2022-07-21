@@ -36,7 +36,7 @@ if (!city1) {
     return null
 }
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card className ="bg-light border rounded-3" style={{ width: '18rem' }}>
         <Card.Title>{city1Name}</Card.Title>
         <Card.Header>Known for:</Card.Header>
         <ListGroup className="list-group-flush">

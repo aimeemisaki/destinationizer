@@ -10,12 +10,12 @@ const Compare = ( { getData1, getData2, search1, search2, city1, city2, searchSt
     }, [])
 
     return (
-        <Stack direction="horizontal" gap={3}>
-            <div className="bg-light border">
-            <City1 city1={city1}/>
+        <Stack direction="horizontal" gap={3} className="d-flex align-items-center justify-content-center">
+            <div>
+                <City1 city1={city1}/>
             </div>
-            <div className="bg-light border ms-auto">
-            <City2 city2={city2} />
+            <div>
+                <City2 city2={city2} />
             </div>
         </Stack>
     )

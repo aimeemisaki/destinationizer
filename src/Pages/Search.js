@@ -47,11 +47,10 @@ const Search = ({ setSearch1, setSearch2, search1, search2, setSearchState1, set
                 <DropdownButton
                 variant="secondary"
                 menuVariant="dark"
-                title="State"
+                title={searchState1}
                 className="mt-2"
                 id="Choose State"
                 onSelect={handleStateChange1}
-                value={searchState1}
                 >
                     {states.map(state => (
                         <Dropdown.Item
@@ -77,11 +76,11 @@ const Search = ({ setSearch1, setSearch2, search1, search2, setSearchState1, set
                 <DropdownButton
                 variant="secondary"
                 menuVariant="dark"
-                title="State"
+                title={searchState2}
                 className="mt-2"
                 id="Choose State"
                 onSelect={handleStateChange2}
-                value={searchState2}>
+                >
                     {states.map(state => (
                         <Dropdown.Item
                         eventKey={state}

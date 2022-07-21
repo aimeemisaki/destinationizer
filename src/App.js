@@ -1,6 +1,6 @@
 // PHOTO SOURCES:
-// Guide, Plane, and Airbnb icons created by Freepik - Flaticon
-import 'bootstrap/dist/css/bootstrap.min.css';
+// Guide, Rental Car, and Airbnb icons created by Freepik - Flaticon
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Search from './Pages/Search';
@@ -19,8 +19,8 @@ function App() {
   const [search1, setSearch1] = useState('')
   const [search2, setSearch2] = useState('')
 
-  const [searchState1, setSearchState1] = useState('')
-  const [searchState2, setSearchState2] = useState('')
+  const [searchState1, setSearchState1] = useState('State')
+  const [searchState2, setSearchState2] = useState('State')
 
   let USA = 'usa'
   

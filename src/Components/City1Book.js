@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Button from 'react-bootstrap/Button'
+import Image from 'react-bootstrap/Image'
+import Airbnb from '../Images/airbnb.png'
+import RentalCar from '../Images/rental-car.png'
+import TourGuide from '../Images/tour-guide.png'
 
 const City1Book = ({ city1 }) => {
     const [city1Airbnb, setCity1Airbnb] = useState()
@@ -30,27 +33,12 @@ const City1Book = ({ city1 }) => {
     }
     return (
         <div>
-            <Button 
-                variant="dark"
-                href={city1Airbnb}
-                target='_blank'
-				rel='noreferrer noopener'
-				style={{ marginTop: '1em' }}>Book Loding with Airbnb
-            </Button>
-            <Button 
-                variant="dark"
-                href={city1Kayak}
-                target='_blank'
-				rel='noreferrer noopener'
-				style={{ marginTop: '1em' }}>Book Rental Cars with Kayak
-            </Button>
-            <Button 
-                variant="dark"
-                href={city1GetYourGuide}
-                target='_blank'
-				rel='noreferrer noopener'
-				style={{ marginTop: '1em' }}>Book tours and guides with GetYourGuide
-            </Button>
+            <Image 
+            src={Airbnb}/>
+            <Image 
+            src={RentalCar}/>
+            <Image 
+            src={TourGuide}/>
         </div>
     )
 }
