@@ -55,7 +55,7 @@ const City2 = ( { city2 }) => {
         size="lg"
         target="_blank"
         style={{ marginTop: "1em"}}>
-        <Link to='/book'>
+        <Link to='/book/2'>
             Book this city!
         </Link>
         </Button>
