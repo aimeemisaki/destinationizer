@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
-import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card'
+import ListGroup from 'react-bootstrap/ListGroup'
 
 
 const City2 = ( { city2 }) => {
@@ -31,31 +33,33 @@ const City2 = ( { city2 }) => {
         getCity2()
     },[city2])
 
+    console.log(city2)
     if(!city2) {
         return null
     }
     return (
-        <div className="city2-container">
-            <div className="city2-attributes">
-                <h1>{city2Name}</h1>
-                <ul>
-                    {city2Attributes && city2Attributes.map(city2Attribute  => (
-                        <li 
-                        key={city2Attribute.id}>
-                        {city2Attribute}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            <Button
-            className ="d-grid gap-2" 
-            variant="secondary" 
-            size="lg">
-                <Link to="/book">
-                    Book this city!
-                </Link>
-            </Button>
-        </div>
+        <Card style={{ width: '18rem' }}>
+        <Card.Title>{city2Name}</Card.Title>
+        <Card.Header>Known for:</Card.Header>
+        <ListGroup className="list-group-flush">
+            {city2Attributes && city2Attributes.map(city2Attribute  => (
+                <ListGroup.Item 
+                key={city2Attribute.id}>
+                {city2Attribute}
+                </ListGroup.Item>
+            ))}
+        </ListGroup>
+        <Button
+        className ="d-grid gap-2" 
+        variant="secondary" 
+        size="lg"
+        target="_blank"
+        style={{ marginTop: "1em"}}>
+        <Link to='/book'>
+            Book this city!
+        </Link>
+        </Button>
+    </Card>
     )
 }
 

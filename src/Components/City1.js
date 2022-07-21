@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card'
+import ListGroup from 'react-bootstrap/ListGroup'
+
 
 const City1 = ({ city1 }) => {
 
@@ -33,28 +36,28 @@ if (!city1) {
     return null
 }
   return (
-        <div className="city1-container">
-            <div className="city1-list-attributes">
-                <h1>{city1Name}</h1>
-                <ul>
-                    {city1Attributes && city1Attributes.map(city1Attribute  => (
-                        <li 
-                        key={city1Attribute.id}>
-                        {city1Attribute}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            <Button
-            className ="d-grid gap-2" 
-            variant="secondary" 
-            size="lg">
-                <Link to='/book'>
-                    Book this city!
-                </Link>
-            </Button>
-            
-        </div>
+    <Card style={{ width: '18rem' }}>
+        <Card.Title>{city1Name}</Card.Title>
+        <Card.Header>Known for:</Card.Header>
+        <ListGroup className="list-group-flush">
+            {city1Attributes && city1Attributes.map(city1Attribute  => (
+                <ListGroup.Item 
+                key={city1Attribute.id}>
+                {city1Attribute}
+                </ListGroup.Item>
+            ))}
+        </ListGroup>
+        <Button
+        className ="d-grid gap-2" 
+        variant="secondary" 
+        size="lg"
+        target="_blank"
+        style={{ marginTop: "1em"}}>
+        <Link to='/book'>
+            Book this city!
+        </Link>
+        </Button>
+    </Card>
   )
     
 }
