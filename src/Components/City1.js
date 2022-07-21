@@ -49,11 +49,11 @@ if (!city1) {
         </ListGroup>
         <Button
         className ="d-grid gap-2" 
-        variant="secondary" 
+        variant="dark" 
         size="lg"
         target="_blank"
         style={{ marginTop: "1em"}}>
-        <Link to='/book/q?=1'>
+        <Link to='/book'>
             Book this city!
         </Link>
         </Button>

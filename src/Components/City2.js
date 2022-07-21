@@ -51,7 +51,7 @@ const City2 = ( { city2 }) => {
         </ListGroup>
         <Button
         className ="d-grid gap-2" 
-        variant="secondary" 
+        variant="dark" 
         size="lg"
         target="_blank"
         style={{ marginTop: "1em"}}>
