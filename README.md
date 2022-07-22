@@ -26,7 +26,6 @@ Open [http://destinationizer.com/] (http://destinationizer.com/) to view more.
 ![Wireframe 3] <img width="799" alt="Booking Page Wireframe" src="https://user-images.githubusercontent.com/93743792/180484375-a9323a44-d051-4e03-a261-3180d089f3b5.png">
 
 
-
 ## Tech Stack
 
 * React
