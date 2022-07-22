@@ -1,3 +1,4 @@
+import '../Styles/Book.css'
 import React from 'react';
 import City1Book from '../Components/City1Book';
 import City2Book from '../Components/City2Book'

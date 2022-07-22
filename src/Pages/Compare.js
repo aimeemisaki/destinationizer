@@ -5,7 +5,7 @@ import Stack from 'react-bootstrap/Stack'
 
 const Compare = ( { getData1, getData2, search1, search2, city1, city2, searchState1, searchState2 }) => {
     useEffect(() => {
-        getData1(search1.toLowerCase().replace(' ', '-'), (searchState1.toLowerCase()));
+        getData1(search1.toLowerCase().replace(' ', '-'), searchState1.toLowerCase());
         getData2(search2.toLowerCase().replace(' ', '-'), searchState2.toLowerCase());
     }, [])
 

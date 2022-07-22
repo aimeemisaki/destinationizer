@@ -33,12 +33,21 @@ const City1Book = ({ city1 }) => {
     }
     return (
         <div>
-            <Image 
-            src={Airbnb}/>
-            <Image 
-            src={RentalCar}/>
-            <Image 
-            src={TourGuide}/>
+            <a href={city1Airbnb}>
+                <Image 
+                src={Airbnb}
+                alt="Access Airbnb Website"/>
+            </a>
+            <a href={city1Kayak}>
+                <Image 
+                src={RentalCar}
+                alt="Access Kayak Website"/>
+            </a>
+            <a href={city1GetYourGuide}>
+                <Image 
+                src={TourGuide}
+                alt="Access GetYourGuide Website"/>
+            </a>
         </div>
     )
 }

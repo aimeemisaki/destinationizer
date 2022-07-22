@@ -35,22 +35,20 @@ const City2Book = ({ city2 }) => {
     return (
         <Container 
         className='p-5 bg-light border rounded-3'>
-            <a href={city2Airbnb}><Image 
-            src={Airbnb}
-            alt="Access Airbnb Website"
-            />
+            <a href={city2Airbnb}>
+                <Image 
+                src={Airbnb}
+                alt="Access Airbnb Website"/>
             </a>
             <a href={city2Kayak}>
-            <Image 
-            src={RentalCar}
-            alt="Access Kayak Website"
-            />
+                <Image 
+                src={RentalCar}
+                alt="Access Kayak Website"/>
             </a>
             <a href={city2GetYourGuide}>
-            <Image 
-            src={TourGuide}
-            alt="Access GetYourGuide Website"
-            />
+                <Image 
+                src={TourGuide}
+                alt="Access GetYourGuide Website"/>
             </a>
         </Container>
     )

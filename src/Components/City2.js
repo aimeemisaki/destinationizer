@@ -63,7 +63,7 @@ const City2 = ( { city2 }) => {
                 {city2Icons && city2Icons.map(city2Icon => (
                     <Image 
                     key={city2Icon.id}
-                    src={city2Icon}>
+                    src={city2Icon+".svg"}>
                     </Image>
                 ))}
                 {city2Attributes && city2Attributes.map(city2Attribute  => (
