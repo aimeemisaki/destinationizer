@@ -13,13 +13,9 @@
 
 Head over to (https://destinationizer.netlify.app/) to view more.
 
-## Screenshots of Portfolio
-![Screenshot 1] <img width="1423" alt="Screen Shot 2022-07-22 at 9 25 56" src="https://user-images.githubusercontent.com/93743792/180484109-63f49ad9-06f3-4687-bb9e-a5216bf0cb68.png">
+## Screenshot of App
 
-
-![Screenshot 2] <img width="1424" alt="Screen Shot 2022-07-22 at 9 30 54" src="https://user-images.githubusercontent.com/93743792/180483831-10295a7f-23d1-4f25-9ce3-9433e2f6062b.png">
-
-![Screenshot 3] <img width="1428" alt="Screen Shot 2022-07-22 at 9 31 06" src="https://user-images.githubusercontent.com/93743792/180483954-59383d18-28bf-4a42-90ba-e2b34c5fdaf1.png">
+<img width="1192" alt="Screen Shot 2022-07-22 at 13 38 24" src="https://user-images.githubusercontent.com/93743792/180562856-748f19a9-d402-4b0c-b18c-0c1b41694626.png">
 
 
 ## Wireframes
@@ -80,7 +76,7 @@ I started by breaking down my website into smaller parts - first by pages, then 
 
 ✈️ As a potential traveler (individual or with a group/business team) who is deciding between two travel destinations, I want to be able to compare the two cities' qualities, so that I can choose the city I will travel to based on the qualities I am or my group is interested in/need.
 
-✈️ As an Airbnb, Kayak or GetYourGuide user, I want to know more about my potential destinations before I search for lodging/flights/car rentals/tours/guides, so I know which city to type in these websites' search inputs.
+✈️ As an Airbnb, Kayak or GetYourGuide user, I want to know more about my potential destinations before I search for lodging/car rentals/tours/guides, so I know which city to type in these websites' search inputs.
 
 ✈️ As a travel site user, I want a home button to clear my previous searches, so that I can compare two other cities or one with another city.
 
