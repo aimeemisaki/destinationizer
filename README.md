@@ -11,7 +11,7 @@
 
 ## Deployed Website Link
 
-Open (http://destinationizer.com/) to view more.
+Head over to (https://destinationizer.netlify.app/) to view more.
 
 ## Screenshots of Portfolio
 ![Screenshot 1] <img width="1423" alt="Screen Shot 2022-07-22 at 9 25 56" src="https://user-images.githubusercontent.com/93743792/180484109-63f49ad9-06f3-4687-bb9e-a5216bf0cb68.png">
