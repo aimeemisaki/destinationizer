@@ -1,10 +1,10 @@
 # Destinationizer App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this app, I utlized the RoadGoat API to fetch data about destinations in the United States, such as their population sizes, "known for" attributes and their corresponding Airbnb, Kayak and GetYourGuide URLs. Users will be able to see two destinations' details at once and choose which destination they would like to book.
 
 ## Deployed Website Link
 
-Open [http://destinationizer.com/] (http://destinationizer.com/) to view more.
+Open (http://destinationizer.com/) to view more.
 
 ## Screenshots of Portfolio
 ![Screenshot 1] <img width="1423" alt="Screen Shot 2022-07-22 at 9 25 56" src="https://user-images.githubusercontent.com/93743792/180484109-63f49ad9-06f3-4687-bb9e-a5216bf0cb68.png">
