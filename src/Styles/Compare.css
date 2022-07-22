@@ -2,11 +2,14 @@ body {
     color: darkslateblue;
 }
 
-#icon {
-    width: 2px;
-    height: 2px;
-}
-
 .error-message {
     color: red;
+}
+
+.btn.link {
+    color: white;
+}
+
+.btn.visited, #btn.hover {
+    color: white;
 }

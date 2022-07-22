@@ -11,11 +11,11 @@ body {
     background-size: cover;
 }
 
-#btn.link {
+.btn.link {
     color: white;
 }
 
-#btn.visited, #btn.hover {
+.btn.visited, #btn.hover {
     color: white;
 }
 

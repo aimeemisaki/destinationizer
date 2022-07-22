@@ -108,7 +108,7 @@ const Search = ({ setSearch1, setSearch2, search1, search2, setSearchState1, set
                     </Row>
                 </Form.Group>
                 <Button 
-                className ="d-flex align-center justify-content-center btn-block" 
+                className ="btn d-flex align-center justify-content-center btn-block" 
                 variant="dark" 
                 size="lg" 
                 type="submit">

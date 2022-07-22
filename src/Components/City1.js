@@ -45,7 +45,7 @@ if (!city1) {
     return null
 }
   return (
-    <Card className ="mt-5 px-2 py-2" border="dark" style={{ width: '18rem' }}>
+    <Card className ="mt-4 px-2 py-2" border="dark" style={{ width: '18rem' }}>
         <Card.Title>{city1Name}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">
                 <strong>Population:</strong> {city1Population} people
@@ -74,7 +74,7 @@ if (!city1) {
                 </Col>
             </Row>
         <Button
-        className ="d-grid gap-2" 
+        className ="btn d-grid gap-2" 
         variant="dark" 
         size="lg"
         style={{ marginTop: "1em"}}>

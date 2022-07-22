@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -44,7 +43,7 @@ const City2 = ( { city2 }) => {
         return null
     }
     return (
-        <Card className="mt-5 px-2 py-2" border="dark" style={{ width: '18rem' }}>
+        <Card className="mt-4 px-2 py-2" border="dark" style={{ width: '18rem' }}>
             <Card.Title>{city2Name}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">
                 <strong>Population:</strong> {city2Population} people
@@ -73,7 +72,7 @@ const City2 = ( { city2 }) => {
                     </Col>
                 </Row>
             <Button
-            className ="d-grid gap-2" 
+            className ="btn d-grid gap-2" 
             variant="dark" 
             size="lg"
             style={{ marginTop: "1em"}}>
