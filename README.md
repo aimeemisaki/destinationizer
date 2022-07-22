@@ -7,7 +7,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Open [http://destinationizer.com/] (http://destinationizer.com/) to view more.
 
 ## Screenshots of Portfolio
-![Screenshot 1] <img width="1423" alt="Screen Shot 2022-07-22 at 9 25 56" src="https://user-images.githubusercontent.com/93743792/180483796-33f1ea8c-83ac-43b6-aa12-9aecb4
+![Screenshot 1] <img width="1423" alt="Screen Shot 2022-07-22 at 9 25 56" src="https://user-images.githubusercontent.com/93743792/180484109-63f49ad9-06f3-4687-bb9e-a5216bf0cb68.png">
+
 
 ![Screenshot 2] <img width="1424" alt="Screen Shot 2022-07-22 at 9 30 54" src="https://user-images.githubusercontent.com/93743792/180483831-10295a7f-23d1-4f25-9ce3-9433e2f6062b.png">
 7b93ee.png">
