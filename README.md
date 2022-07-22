@@ -11,7 +11,6 @@ Open [http://destinationizer.com/] (http://destinationizer.com/) to view more.
 
 
 ![Screenshot 2] <img width="1424" alt="Screen Shot 2022-07-22 at 9 30 54" src="https://user-images.githubusercontent.com/93743792/180483831-10295a7f-23d1-4f25-9ce3-9433e2f6062b.png">
-7b93ee.png">
 
 ![Screenshot 3] <img width="1428" alt="Screen Shot 2022-07-22 at 9 31 06" src="https://user-images.githubusercontent.com/93743792/180483954-59383d18-28bf-4a42-90ba-e2b34c5fdaf1.png">
 
