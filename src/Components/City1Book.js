@@ -33,7 +33,7 @@ const City1Book = ({ city1 }) => {
         return null
     }
     return (
-        <Container className="bg-light px-4 py-4 border rounded-3 d-flex align-items-center justify-content-center" style={{ width: '25rem'}}>
+        <Container className="p-5 bg-light border rounded-3 flex-row">
             <Row>
                 <Col>
                     <a href={city1Airbnb}>
@@ -68,13 +68,13 @@ const City1Book = ({ city1 }) => {
             </Row>
             <Row>
                 <Col>
-                    <p className="text-muted mt-3" style={{fontSize: 18}}>Book lodging with Airbnb</p>
+                    <p className="text-muted mt-3">Book lodging with Airbnb</p>
                 </Col>
                 <Col>
-                    <p className="text-muted mt-3" style={{fontSize: 18}}>Book rental cars with Kayak</p>
+                    <p className="text-muted mt-3">Book rental cars with Kayak</p>
                 </Col>
                 <Col>
-                    <p className="text-muted mt-3" style={{fontSize: 18}}>Book tours and guides with GetYourGuide</p>
+                    <p className="text-muted mt-3">Book tours and guides with GetYourGuide</p>
                 </Col>
             </Row>
         </Container>

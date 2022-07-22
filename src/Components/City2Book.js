@@ -35,7 +35,7 @@ const City2Book = ({ city2 }) => {
     }
     return (
         <Container 
-        className='p-5 bg-light border rounded-3'>
+        className="p-5 bg-light border rounded-3 flex-row">
             <Row>
                 <Col>
                     <a href={city2Airbnb}>

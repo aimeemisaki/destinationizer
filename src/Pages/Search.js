@@ -28,11 +28,11 @@ const Search = ({ setSearch1, setSearch2, search1, search2, setSearchState1, set
     const states = ['AL', 'AK', 'AZ', 'AR', 'AS', 'CA', 'CO', 'CM', 'CT', 'DE', 'DC', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'TT', 'UT', 'VT', 'VA', 'VI', 'WA', 'WV', 'WI', 'WY'];
 
     return (
-        <Container className="bg-light pb-4 my-auto mx-auto border rounded-3">
+        <Container className="bg-transparent pb-4 my-auto mx-auto border rounded-3">
             <Container fluid className="py-4">
                 <Row>
                     <Col>
-                        <h2 className="text-center">Look up and compare destination in the United States to see what they're known for and their population sizes.</h2>
+                        <h2 className="text-center">Looking for a destination, but don't know where? Compare here.</h2>
                     </Col>
                 </Row>
             </Container>
@@ -54,7 +54,7 @@ const Search = ({ setSearch1, setSearch2, search1, search2, setSearchState1, set
                         <Col>
                             <Dropdown>
                                 <DropdownButton
-                                variant="secondary"
+                                variant="dark"
                                 menuVariant="dark"
                                 title={searchState1}
                                 className="mt-2"
@@ -89,7 +89,7 @@ const Search = ({ setSearch1, setSearch2, search1, search2, setSearchState1, set
                         <Col>
                             <Dropdown>
                                 <DropdownButton
-                                variant="secondary"
+                                variant="dark"
                                 menuVariant="dark"
                                 title={searchState2}
                                 className="mt-2"
@@ -109,7 +109,7 @@ const Search = ({ setSearch1, setSearch2, search1, search2, setSearchState1, set
                 </Form.Group>
                 <Button 
                 className ="d-flex align-center justify-content-center btn-block" 
-                variant="secondary" 
+                variant="dark" 
                 size="lg" 
                 type="submit">
                     <Link to="/compare">
