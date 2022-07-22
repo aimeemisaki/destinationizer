@@ -1,6 +1,12 @@
 # Destinationizer App
 
-In this app, I utlized the RoadGoat API to fetch data about destinations in the United States, such as their population sizes, "known for" attributes and their corresponding Airbnb, Kayak and GetYourGuide URLs. Users will be able to see two destinations' details at once and choose which destination they would like to book.
+🤔 Wanting to find a destination before booking, but don't know which one to choose? 
+🏝 This app allows users to compare destinations they are interested in and book from there!
+
+💡 Users will be able to
+* choose two destinations
+* see two destinations' details at once
+* access Airbnb, Kayak and GetYourGuide URLs corresponding to the destination they chose
 
 ## Deployed Website Link
 
