@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Destinationizer App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Deployed Website Link
 
-In the project directory, you can run:
+Open [http://destinationizer.com/] (http://destinationizer.com/) to view more.
 
-### `npm start`
+## Screenshots of Portfolio
+![Screenshot 1] <img width="1423" alt="Screen Shot 2022-07-22 at 9 25 56" src="https://user-images.githubusercontent.com/93743792/180483796-33f1ea8c-83ac-43b6-aa12-9aecb4
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Screenshot 2] <img width="1424" alt="Screen Shot 2022-07-22 at 9 30 54" src="https://user-images.githubusercontent.com/93743792/180483831-10295a7f-23d1-4f25-9ce3-9433e2f6062b.png">
+7b93ee.png">
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Screenshot 3] <img width="1428" alt="Screen Shot 2022-07-22 at 9 31 06" src="https://user-images.githubusercontent.com/93743792/180483954-59383d18-28bf-4a42-90ba-e2b34c5fdaf1.png">
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Wireframes
 
-### `npm run build`
+![Wireframe 1](/README-images/Wireframe1.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Wireframe 2](/README-images/Wireframe2.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Wireframe 3](/README-images/Wireframe3.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* React
+* API
+* React-Bootstrap/Bootstrap
+* Javascript
+* CSS
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```js
+const [city1Name, setCity1Name] = useState('');
+    const [city1Attributes, setCity1Attributes] = useState();
+    const [city1Population, setCity1Population] = useState('');
+    const [city1Icons, setCity1Icons] = useState();
+    
+    
+    
+    const getCity1 = () => {
+        if (city1) {
+        let city1Arr = []
+        let city1IconArr = []
+        for (let i=0; i<city1.included.length; i++) {
+            if (city1.included[i].type.includes('known_for')) {
+                city1Arr.push(city1.included[i].attributes.name)
+                city1IconArr.push(city1.included[i].attributes.icon)
+            } 
+        }
+        setCity1Attributes(city1Arr);
+        setCity1Icons(city1IconArr);
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+        let newCity1Name = city1.data.attributes.name;
+        setCity1Name(newCity1Name)
+        
+        let newCity1Population = city1.data.attributes.population
+        setCity1Population(newCity1Population);
+        }
+    }
+  ```
 
-## Learn More
+## Approach
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+I started by breaking down my website into smaller parts - first by pages, then by components, trying to clearly understand which one needed states and props to pass or be passed. I made sure that my 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## User Stories 
 
-### Code Splitting
+✈️ As a potential traveler (individual or with a group/business team) who is deciding between two travel destinations, I want to be able to compare the two cities' qualities, so that I can choose the city I will travel to based on the qualities I am or my group is interested in/need.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+✈️ As an Airbnb, Kayak or GetYourGuide user, I want to know more about my potential destinations before I search for lodging/flights/car rentals/tours/guides, so I know which city to type in these websites' search inputs.
 
-### Analyzing the Bundle Size
+✈️ As a travel site user, I want a home button to clear my previous searches, so that I can compare two other cities or one with another city.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+✈️ As a travel site user, I want to be able to access booking sites to the corresponding city I choose, so that I can easily book lodging, flights, and any other potential travel essentials I need for my destination.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Unsolved Problems / Major Hurdles
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* Getting API images
 
-### Deployment
+## Future Stretch Goals 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Add a custom error message for each error status
+* Add an animation
