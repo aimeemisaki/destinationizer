@@ -17,11 +17,14 @@ Open [http://destinationizer.com/] (http://destinationizer.com/) to view more.
 
 ## Wireframes
 
-![Wireframe 1](/README-images/Wireframe1.png)
+![Wireframe 1] <img width="769" alt="Form:Welcome Page Wireframe" src="https://user-images.githubusercontent.com/93743792/180484304-f3175bcc-b807-45e7-91a5-a3db3d0bcfc1.png">
 
-![Wireframe 2](/README-images/Wireframe2.png)
 
-![Wireframe 3](/README-images/Wireframe3.png)
+![Wireframe 2] <img width="721" alt="Comparison Page Wireframe" src="https://user-images.githubusercontent.com/93743792/180484340-c6caa3f9-3423-44a7-a8f3-364676494663.png">
+
+
+![Wireframe 3] <img width="799" alt="Booking Page Wireframe" src="https://user-images.githubusercontent.com/93743792/180484375-a9323a44-d051-4e03-a261-3180d089f3b5.png">
+
 
 
 ## Tech Stack
