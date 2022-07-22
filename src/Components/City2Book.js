@@ -43,8 +43,8 @@ const City2Book = ({ city2 }) => {
                         src={Airbnb}
                         alt="Access Airbnb Website"
                         target="_blank"
-                        width={150}
-                        height={150}/>
+                        width={100}
+                        height={100}/>
                     </a>
                 </Col>
                 <Col>
@@ -53,8 +53,8 @@ const City2Book = ({ city2 }) => {
                         src={RentalCar}
                         alt="Access Kayak Website"
                         target="_blank"
-                        width={150}
-                        height={150}/>
+                        width={100}
+                        height={100}/>
                     </a>
                 </Col>
                 <Col>
@@ -63,8 +63,8 @@ const City2Book = ({ city2 }) => {
                         src={TourGuide}
                         alt="Access GetYourGuide Website"
                         target="_blank"
-                        width={150}
-                        height={150}/>
+                        width={100}
+                        height={100}/>
                     </a>
                 </Col>
             </Row>

@@ -1,11 +1,11 @@
 /* PHOTO SOURCE: https://www.flickr.com/photos/decaseconds/13369222375*/
 html {
-    height: 100%;
+    height: 140%;
 }
 body {
     color: white;
     background-image: url('../Images/americantrip.jpeg');
-    height: 100%;
+    height: 140%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
