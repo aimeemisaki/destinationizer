@@ -5,6 +5,8 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Image from 'react-bootstrap/Image';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 const City2 = ( { city2 }) => {
@@ -42,39 +44,42 @@ const City2 = ( { city2 }) => {
         return null
     }
     return (
-        <Card className ="bg-light border rounded-3" style={{ width: '18rem' }}>
+        <Card className="px-2 py-2" border="dark" style={{ width: '18rem' }}>
             <Card.Title>{city2Name}</Card.Title>
-            <Card.Body>
+            <Card.Subtitle className="mb-2 text-muted">
                 <strong>Population:</strong> {city2Population} people
-            </Card.Body>
+            </Card.Subtitle>
             <Card.Header><strong>Known for:</strong></Card.Header>
-            <ListGroup horizontal>
-                    {city2Icons && city2Icons.map(city2Icon => (
-                        <ListGroup.Item>
-                            <Image 
-                            key={city2Icon.id}
-                            src={city2Icon+".svg"}
-                            alt="icon"
-                            width={10}
-                            height={10}/>
-                        </ListGroup.Item>
-                    ))}
-                {city2Attributes && city2Attributes.map(city2Attribute  => (
-                    <ListGroup.Item 
-                    key={city2Attribute.id}>
-                    {city2Attribute}
-                    </ListGroup.Item>
-                ))}
-            </ListGroup>
+                <Row>
+                    <Col>
+                        {city2Attributes && city2Attributes.map(city2Attribute  => (
+                                <div> 
+                                    <p>{city2Attribute}</p>
+                                </div>
+                        ))}
+                    </Col>
+                    <Col>
+                        {city2Icons && city2Icons.map(city2Icon => (
+                            <div>
+                                <Image 
+                                key={city2Icon.id}
+                                src={city2Icon+".svg"}
+                                alt="icon"
+                                width={35}
+                                height={35}
+                                style={{ marginRight: "5em", marginTop: ".25em"}}/>
+                            </div>
+                        ))}
+                    </Col>
+                </Row>
             <Button
             className ="d-grid gap-2" 
             variant="dark" 
             size="lg"
-            target="_blank"
-            style={{ marginTop: "1em", marginBottom: "1em"}}>
-            <Link to='/book/2'>
-                Book this city!
-            </Link>
+            style={{ marginTop: "1em"}}>
+                <Link to='/book/2'>
+                    Book this city!
+                </Link>
             </Button>
         </Card>
     )

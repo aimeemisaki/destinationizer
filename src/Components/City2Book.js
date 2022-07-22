@@ -8,28 +8,27 @@ import RentalCar from '../Images/rental-car.png';
 import TourGuide from '../Images/tour-guide.png';
 
 const City2Book = ({ city2 }) => {
-    const [city2Airbnb, setCity2Airbnb] = useState()
-    const [city2Kayak, setCity2Kayak] = useState()
-    const [city2GetYourGuide, setCity2GetYourGuide] = useState()
+    const [city2Airbnb, setCity2Airbnb] = useState();
+    const [city2Kayak, setCity2Kayak] = useState();
+    const [city2GetYourGuide, setCity2GetYourGuide] = useState();
 
     const getCity2Booking = () => {
         if (city2) {
-        // getting airbnb url from data.attributes
         let newCity2Airbnb = city2.data.attributes.airbnb_url
         setCity2Airbnb(newCity2Airbnb);
-        // getting kayak url from data.attributes
+
         let newCity2Kayak = city2.data.attributes.kayak_car_rental_url
-        setCity2Kayak(newCity2Kayak)
-        // getting GetYourGuide url from data.attributes
+        setCity2Kayak(newCity2Kayak);
+     
         let newCity2GetYourGuide = city2.data.attributes.getyourguide_url
-        setCity2GetYourGuide(newCity2GetYourGuide)
+        setCity2GetYourGuide(newCity2GetYourGuide);
         }
-    }
+    };
 
 
     useEffect(() => {
         getCity2Booking()
-    }, [city2])
+    }, [city2]);
 
     if (!city2) {
         return null
@@ -43,7 +42,9 @@ const City2Book = ({ city2 }) => {
                         <Image 
                         src={Airbnb}
                         alt="Access Airbnb Website"
-                        id="icon"/>
+                        target="_blank"
+                        width={150}
+                        height={150}/>
                     </a>
                 </Col>
                 <Col>
@@ -51,7 +52,9 @@ const City2Book = ({ city2 }) => {
                         <Image 
                         src={RentalCar}
                         alt="Access Kayak Website"
-                        id="icon"/>
+                        target="_blank"
+                        width={150}
+                        height={150}/>
                     </a>
                 </Col>
                 <Col>
@@ -59,8 +62,21 @@ const City2Book = ({ city2 }) => {
                         <Image 
                         src={TourGuide}
                         alt="Access GetYourGuide Website"
-                        id="icon"/>
+                        target="_blank"
+                        width={150}
+                        height={150}/>
                     </a>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <p className="text-muted mt-3">Book lodging with Airbnb</p>
+                </Col>
+                <Col>
+                    <p className="text-muted mt-3">Book rental cars with Kayak</p>
+                </Col>
+                <Col>
+                    <p className="text-muted mt-3">Book tours and guides with GetYourGuide</p>
                 </Col>
             </Row>
         </Container>

@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
 import Image from 'react-bootstrap/Image';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
 const City1 = ({ city1 }) => {
@@ -44,33 +45,38 @@ if (!city1) {
     return null
 }
   return (
-    <Card className ="bg-light border rounded-3" style={{ width: '18rem' }}>
+    <Card className ="px-2 py-2" border="dark" style={{ width: '18rem' }}>
         <Card.Title>{city1Name}</Card.Title>
-        <Card.Body>
+        <Card.Subtitle className="mb-2 text-muted">
                 <strong>Population:</strong> {city1Population} people
-        </Card.Body>
+        </Card.Subtitle>
         <Card.Header><strong>Known for:</strong></Card.Header>
-        <ListGroup className="list-group-flush">
-            {city1Icons && city1Icons.map(city1Icon => (
-                <Image 
-                key={city1Icon.id}
-                src={city1Icon+".svg"}
-                alt="icon"
-                width={10}
-                height={10}/>
-            ))}
-            {city1Attributes && city1Attributes.map(city1Attribute  => (
-                <ListGroup.Item 
-                key={city1Attribute.id}>
-                {city1Attribute}
-                </ListGroup.Item>
-            ))}
-        </ListGroup>
+            <Row>
+                <Col>
+                    {city1Attributes && city1Attributes.map(city1Attribute  => (
+                        <div>
+                            <p>{city1Attribute}</p>
+                        </div>
+                    ))}
+                </Col>
+                <Col>
+                    {city1Icons && city1Icons.map(city1Icon => (
+                        <div>
+                            <Image 
+                            key={city1Icon.id}
+                            src={city1Icon+".svg"}
+                            alt="icon"
+                            width={35}
+                            height={35}
+                            style={{ marginRight: "5em", marginTop: ".25em"}}/>
+                        </div>
+                    ))}
+                </Col>
+            </Row>
         <Button
         className ="d-grid gap-2" 
         variant="dark" 
         size="lg"
-        target="_blank"
         style={{ marginTop: "1em"}}>
         <Link to='/book/1'>
             Book this city!

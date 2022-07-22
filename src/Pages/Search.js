@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
-const Search = ({ setSearch1, setSearch2, search1, search2, setSearchState1, setSearchState2, searchState1, searchState2 } ) => {
+const Search = ({ setSearch1, setSearch2, search1, search2, setSearchState1, setSearchState2, searchState1, searchState2, error } ) => {
     const handleChange1 = (event) => {
         setSearch1(event.target.value)
     };
@@ -108,16 +108,18 @@ const Search = ({ setSearch1, setSearch2, search1, search2, setSearchState1, set
                     </Row>
                 </Form.Group>
                 <Button 
-                className ="d-grid gap-2" 
+                className ="d-flex align-center justify-content-center btn-block" 
                 variant="secondary" 
                 size="lg" 
-                id="compare-button"
                 type="submit">
                     <Link to="/compare">
                         Compare Cities
                     </Link>
                 </Button>
             </Form>
+            <div className="error-container">
+                <p className="error-message">{error}</p>
+            </div>
         </Container>
     )
 }

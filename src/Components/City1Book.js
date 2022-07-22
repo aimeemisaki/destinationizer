@@ -9,28 +9,25 @@ import TourGuide from '../Images/tour-guide.png';
 
 
 const City1Book = ({ city1 }) => {
-    const [city1Airbnb, setCity1Airbnb] = useState()
-    const [city1Kayak, setCity1Kayak] = useState()
-    const [city1GetYourGuide, setCity1GetYourGuide] = useState()
+    const [city1Airbnb, setCity1Airbnb] = useState();
+    const [city1Kayak, setCity1Kayak] = useState();
+    const [city1GetYourGuide, setCity1GetYourGuide] = useState();
 
-    // getting Airbnb, Kayak and GetYourGuide links
     const getCity1Booking = () => {
         if (city1) {
-        // getting airbnb url from data.attributes
         let newCity1Airbnb = city1.data.attributes.airbnb_url
         setCity1Airbnb(newCity1Airbnb);
-        // getting kayak url from data.attributes
-        let newCity1Kayak = city1.data.attributes.kayak_car_rental_url
-        setCity1Kayak(newCity1Kayak)
-        // getting GetYourGuide url from data.attributes
-        let newCity1GetYourGuide = city1.data.attributes.getyourguide_url
-        setCity1GetYourGuide(newCity1GetYourGuide)
-        }
-    }
 
+        let newCity1Kayak = city1.data.attributes.kayak_car_rental_url
+        setCity1Kayak(newCity1Kayak);
+   
+        let newCity1GetYourGuide = city1.data.attributes.getyourguide_url
+        setCity1GetYourGuide(newCity1GetYourGuide);
+        }
+    };
     useEffect(() => {
         getCity1Booking()
-    }, [city1])
+    }, [city1]);
 
     if (!city1) {
         return null
@@ -43,7 +40,9 @@ const City1Book = ({ city1 }) => {
                         <Image 
                         src={Airbnb}
                         alt="Access Airbnb Website"
-                        id="icon"/>
+                        target="_blank"
+                        width={150}
+                        height={150}/>
                     </a>
                 </Col>
                 <Col>
@@ -51,7 +50,9 @@ const City1Book = ({ city1 }) => {
                         <Image 
                         src={RentalCar}
                         alt="Access Kayak Website"
-                        id="icon"/>
+                        target="_blank"
+                        width={150}
+                        height={150}/>
                     </a>
                 </Col>
                 <Col>
@@ -59,8 +60,21 @@ const City1Book = ({ city1 }) => {
                         <Image 
                         src={TourGuide}
                         alt="Access GetYourGuide Website"
-                        id="icon"/>
+                        target="_blank"
+                        width={150}
+                        height={150}/>
                     </a>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <p className="text-muted mt-3" style={{fontSize: 18}}>Book lodging with Airbnb</p>
+                </Col>
+                <Col>
+                    <p className="text-muted mt-3" style={{fontSize: 18}}>Book rental cars with Kayak</p>
+                </Col>
+                <Col>
+                    <p className="text-muted mt-3" style={{fontSize: 18}}>Book tours and guides with GetYourGuide</p>
                 </Col>
             </Row>
         </Container>

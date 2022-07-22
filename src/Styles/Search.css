@@ -10,11 +10,18 @@ body {
     background-size: cover;
 }
 
-#compare-button.link {
+#btn.link {
     color: white;
 }
 
-#compare-button.visited, #compare-button.hover {
+#btn.visited, #btn.hover {
     color: white;
+}
+
+.error-container {
+    background-color: lightcoral;
+}
+.error-message {
+    color: red;
 }
 
