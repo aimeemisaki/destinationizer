@@ -1,6 +1,7 @@
 # Destinationizer App
 
 🤔 Wanting to find a destination before booking, but don't know which one to choose? 
+
 🏝 This app allows users to compare destinations they are interested in and book from there!
 
 💡 Users will be able to
