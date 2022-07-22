@@ -32,7 +32,7 @@ const Search = ({ setSearch1, setSearch2, search1, search2, setSearchState1, set
             <Container fluid className="py-4">
                 <Row>
                     <Col>
-                        <h2 className="text-center">Look up and compare any city or town in the United States to see what they're known for and their populations.</h2>
+                        <h2 className="text-center">Look up and compare destination in the United States to see what they're known for and their population sizes.</h2>
                     </Col>
                 </Row>
             </Container>
