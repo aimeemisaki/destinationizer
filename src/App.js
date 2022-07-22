@@ -7,6 +7,7 @@ import Search from './Pages/Search';
 import Compare from './Pages/Compare';
 import Book from './Pages/Book';
 import Navigation from './Components/Navigation';
+import ErrorHandle from './Components/ErrorHandle'
 
 
 
@@ -19,7 +20,6 @@ function App() {
   const [search2, setSearch2] = useState('');
   const [searchState1, setSearchState1] = useState('State');
   const [searchState2, setSearchState2] = useState('State');
-  const [error, setError] = useState('')
   let USA = 'usa'
   
   const options = {
@@ -32,26 +32,12 @@ function App() {
     const data = await fetch(`https://api.roadgoat.com/api/v2/destinations/${search1}-${searchState1}-${USA}`, options)
     const res = await data.json()
       setCity1(res);
-    if(res.status === 401 || res.status === 402){
-      setError("Invalid request!")
-    } else if (res.status === 404) {
-      setError("You must enter the name of the destination in proper format.")
-    } else if (res.status >= 400) {
-      setError("Something went wrong!")
-    }
   }
 
   async function getData2(search2, searchState2) {
     const data = await fetch(`https://api.roadgoat.com/api/v2/destinations/${search2}-${searchState2}-${USA}`, options)
     const res = await data.json()
       setCity2(res);
-    if(res.status === 401 || res.status === 402){
-      setError("Invalid request!")
-    } else if (res.status === 404) {
-      setError("You must enter the name of the destination in proper format.")
-    } else if (res.status >= 400) {
-      setError("Something went wrong!")
-    }
   }
 
   return (
@@ -59,8 +45,8 @@ function App() {
       <Navigation />
       <main>
         <Routes>
-          <Route path ="/" element={<Search setSearch1={setSearch1} setSearch2={setSearch2} search1={search1} search2={search2} setSearchState1={setSearchState1} setSearchState2={setSearchState2} searchState1={searchState1} searchState2={searchState2} error={error}/>} />
-          <Route path="/compare" element= {<Compare city1={city1} city2={city2} getData1={getData1} getData2={getData2} search1={search1} search2={search2} searchState1={searchState1} searchState2={searchState2} />} />
+          <Route path ="/" element={<Search setSearch1={setSearch1} setSearch2={setSearch2} search1={search1} search2={search2} setSearchState1={setSearchState1} setSearchState2={setSearchState2} searchState1={searchState1} searchState2={searchState2}/>} />
+          <Route path="/compare" element= {<Compare city1={city1} city2={city2} getData1={getData1} getData2={getData2} search1={search1} search2={search2} searchState1={searchState1} searchState2={searchState2}/>} />
           <Route path="/book/:cityId" element={<Book city1={city1} city2={city2} />} />
           <Route path="*" element={<Navigate to ="/" />} />
         </Routes>

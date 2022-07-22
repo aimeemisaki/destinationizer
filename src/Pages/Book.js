@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 const Book = ({ city1, city2 }) => {
     let id = useParams()
     return (
-        <div className="d-flex align-items-center justify-content-center">
+        <div className="pt-5 d-flex align-items-center justify-content-center">
             {id.cityId === "1" 
             ? <City1Book city1={city1} />
             : <City2Book city2= {city2} />

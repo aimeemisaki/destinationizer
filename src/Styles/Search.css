@@ -1,11 +1,11 @@
 /* PHOTO SOURCE: https://www.flickr.com/photos/decaseconds/13369222375*/
 html {
-    height: 140%;
+    height: 100%;
 }
 body {
     color: white;
     background-image: url('../Images/americantrip.jpeg');
-    height: 140%;
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,10 +19,9 @@ body {
     color: white;
 }
 
-.error-container {
-    background-color: lightcoral;
-}
-.error-message {
-    color: red;
+
+.dropdown-menu {
+    height: 200px;
+    overflow-y: scroll
 }
 
