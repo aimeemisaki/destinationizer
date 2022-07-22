@@ -45,7 +45,7 @@ if (!city1) {
     return null
 }
   return (
-    <Card className ="px-2 py-2" border="dark" style={{ width: '18rem' }}>
+    <Card className ="mt-5 px-2 py-2" border="dark" style={{ width: '18rem' }}>
         <Card.Title>{city1Name}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">
                 <strong>Population:</strong> {city1Population} people

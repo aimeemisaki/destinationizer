@@ -33,7 +33,7 @@ const City1Book = ({ city1 }) => {
         return null
     }
     return (
-        <Container className="p-5 bg-light border rounded-3 flex-row">
+        <Container className="mt-5 p-5 bg-light border rounded-3 flex-row">
             <Row>
                 <Col>
                     <a href={city1Airbnb}>

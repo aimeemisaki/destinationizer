@@ -44,7 +44,7 @@ const City2 = ( { city2 }) => {
         return null
     }
     return (
-        <Card className="px-2 py-2" border="dark" style={{ width: '18rem' }}>
+        <Card className="mt-5 px-2 py-2" border="dark" style={{ width: '18rem' }}>
             <Card.Title>{city2Name}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">
                 <strong>Population:</strong> {city2Population} people
