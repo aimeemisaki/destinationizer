@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import Image from 'react-bootstrap/Image'
-import Airbnb from '../Images/airbnb.png'
-import RentalCar from '../Images/rental-car.png'
-import TourGuide from '../Images/tour-guide.png'
+import Image from 'react-bootstrap/Image';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Airbnb from '../Images/airbnb.png';
+import RentalCar from '../Images/rental-car.png';
+import TourGuide from '../Images/tour-guide.png';
+
 
 const City1Book = ({ city1 }) => {
     const [city1Airbnb, setCity1Airbnb] = useState()
@@ -32,23 +36,34 @@ const City1Book = ({ city1 }) => {
         return null
     }
     return (
-        <div>
-            <a href={city1Airbnb}>
-                <Image 
-                src={Airbnb}
-                alt="Access Airbnb Website"/>
-            </a>
-            <a href={city1Kayak}>
-                <Image 
-                src={RentalCar}
-                alt="Access Kayak Website"/>
-            </a>
-            <a href={city1GetYourGuide}>
-                <Image 
-                src={TourGuide}
-                alt="Access GetYourGuide Website"/>
-            </a>
-        </div>
+        <Container className="bg-light px-4 py-4 border rounded-3 d-flex align-items-center justify-content-center" style={{ width: '25rem'}}>
+            <Row>
+                <Col>
+                    <a href={city1Airbnb}>
+                        <Image 
+                        src={Airbnb}
+                        alt="Access Airbnb Website"
+                        id="icon"/>
+                    </a>
+                </Col>
+                <Col>
+                    <a href={city1Kayak}>
+                        <Image 
+                        src={RentalCar}
+                        alt="Access Kayak Website"
+                        id="icon"/>
+                    </a>
+                </Col>
+                <Col>
+                    <a href={city1GetYourGuide}>
+                        <Image 
+                        src={TourGuide}
+                        alt="Access GetYourGuide Website"
+                        id="icon"/>
+                    </a>
+                </Col>
+            </Row>
+        </Container>
     )
 }
 

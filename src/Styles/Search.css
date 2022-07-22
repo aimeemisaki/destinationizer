@@ -1,0 +1,20 @@
+/* PHOTO SOURCE: https://www.flickr.com/photos/decaseconds/13369222375*/
+html {
+    height: 100%;
+}
+body {
+    background-image: url('../Images/americantrip.jpeg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#compare-button.link {
+    color: white;
+}
+
+#compare-button.visited, #compare-button.hover {
+    color: white;
+}
+

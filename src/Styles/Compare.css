@@ -1,3 +1,9 @@
 body {
     background-color: black;
+    color: darkslateblue;
+}
+
+#icon {
+    width: 2px;
+    height: 2px;
 }

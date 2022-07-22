@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Image from 'react-bootstrap/Image'
-import Container from 'react-bootstrap/Container'
-import Airbnb from '../Images/airbnb.png'
-import RentalCar from '../Images/rental-car.png'
-import TourGuide from '../Images/tour-guide.png'
+import Image from 'react-bootstrap/Image';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Airbnb from '../Images/airbnb.png';
+import RentalCar from '../Images/rental-car.png';
+import TourGuide from '../Images/tour-guide.png';
 
 const City2Book = ({ city2 }) => {
     const [city2Airbnb, setCity2Airbnb] = useState()
@@ -35,21 +37,32 @@ const City2Book = ({ city2 }) => {
     return (
         <Container 
         className='p-5 bg-light border rounded-3'>
-            <a href={city2Airbnb}>
-                <Image 
-                src={Airbnb}
-                alt="Access Airbnb Website"/>
-            </a>
-            <a href={city2Kayak}>
-                <Image 
-                src={RentalCar}
-                alt="Access Kayak Website"/>
-            </a>
-            <a href={city2GetYourGuide}>
-                <Image 
-                src={TourGuide}
-                alt="Access GetYourGuide Website"/>
-            </a>
+            <Row>
+                <Col>
+                    <a href={city2Airbnb}>
+                        <Image 
+                        src={Airbnb}
+                        alt="Access Airbnb Website"
+                        id="icon"/>
+                    </a>
+                </Col>
+                <Col>
+                    <a href={city2Kayak}>
+                        <Image 
+                        src={RentalCar}
+                        alt="Access Kayak Website"
+                        id="icon"/>
+                    </a>
+                </Col>
+                <Col>
+                    <a href={city2GetYourGuide}>
+                        <Image 
+                        src={TourGuide}
+                        alt="Access GetYourGuide Website"
+                        id="icon"/>
+                    </a>
+                </Col>
+            </Row>
         </Container>
     )
 

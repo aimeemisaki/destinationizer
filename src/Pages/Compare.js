@@ -1,7 +1,8 @@
+import '../Styles/Compare.css';
 import React, { useEffect } from 'react';
-import City1 from '../Components/City1'
-import City2 from '../Components/City2'
-import Stack from 'react-bootstrap/Stack'
+import City1 from '../Components/City1';
+import City2 from '../Components/City2';
+import Stack from 'react-bootstrap/Stack';
 
 const Compare = ( { getData1, getData2, search1, search2, city1, city2, searchState1, searchState2 }) => {
     useEffect(() => {
@@ -19,7 +20,6 @@ const Compare = ( { getData1, getData2, search1, search2, city1, city2, searchSt
             </div>
         </Stack>
     )
-
 }
 
 export default Compare
