@@ -13,6 +13,10 @@
 
 Head over to (https://destinationizer.netlify.app/) to view more.
 
+## Approach
+
+I started by breaking down my website into smaller parts - first by pages, then by components, trying to clearly understand which one needed states and props to pass or be passed. A lot of time went into getting data from the RoadGoat API and learning React Bootstrap in our time constraint.
+
 ## Screenshot of App
 
 <img width="1192" alt="Screen Shot 2022-07-22 at 13 38 24" src="https://user-images.githubusercontent.com/93743792/180562856-748f19a9-d402-4b0c-b18c-0c1b41694626.png">
@@ -67,10 +71,6 @@ const [city1Name, setCity1Name] = useState('');
         }
     }
   ```
-
-## Approach
-
-I started by breaking down my website into smaller parts - first by pages, then by components, trying to clearly understand which one needed states and props to pass or be passed. I made sure that my 
 
 ## User Stories 
 
