@@ -1,32 +1,66 @@
-import '../Styles/Search.css';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { useReducer } from 'react';
+import { statesArray } from '../../data-and-functions/statesArray';
+import { searchReducer } from '../../data-and-functions/searchReducer';
+import { Form, Button, Dropdown, DropdownButton, Container, Row, Col } from 'react-bootstrap';
 
 
-const Search = ({ setSearch1, setSearch2, search1, search2, setSearchState1, setSearchState2, searchState1, searchState2} ) => {
-    const handleChange1 = (event) => {
-        setSearch1(event.target.value)
-    };
-    const handleChange2 = (event) => {
-        setSearch2(event.target.value)
-    };
+const Search = () => {
+    // const handleChange1 = (event) => {
+    //     setSearch1(event.target.value)
+    // };
+    // const handleChange2 = (event) => {
+    //     setSearch2(event.target.value)
+    // };
 
-    const handleStateChange1 = (event) => {
-        setSearchState1(event)
-    };
+    // const handleStateChange1 = (event) => {
+    //     setSearchState1(event)
+    // };
 
-    const handleStateChange2 = (event) => {
-        setSearchState2(event)
-    };
+    // const handleStateChange2 = (event) => {
+    //     setSearchState2(event)
+    // };
+    // Initial state for searchCriteria
+    // ===========================================================================
 
-    const states = ['AL', 'AK', 'AZ', 'AR', 'AS', 'CA', 'CO', 'CM', 'CT', 'DE', 'DC', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'TT', 'UT', 'VT', 'VA', 'VI', 'WA', 'WV', 'WI', 'WY'];
+    const initialState = {
+        inputState1: 'State',
+        inputState2: 'State',
+        inputCity1: '',
+        inputCity2: ''
+    }
 
+   // State Hooks and Variables
+  // ===========================================================================
+    
+    const [searchForm, dispatch] = useReducer(searchReducer, initialState)
+
+
+  // Functions
+  // ===========================================================================
+
+    const cityHandler = (event) => {
+        dispatch({
+            type: 'update',
+            input: { key: event.target.name, value: event.target.value }
+        })
+    }
+
+    const stateHandler = (event) => {
+        dispatch({
+            type: 'update',
+            input: { key: event.target.name, value: event }
+        })
+    }
+
+    console.log(statesArray)
+    console.log(searchForm.inputCity1)
+    console.log(searchForm.inputCity2)
+    console.log(searchForm.inputState1)
+    console.log(searchForm.inputState2)
+    if (!searchForm) {
+        return <Container>Loading...</Container>
+    }
     return (
         <Container className="bg-transparent mt-5 pt-5 pb-4 mx-auto">
             <Container fluid className="py-4">
@@ -39,31 +73,32 @@ const Search = ({ setSearch1, setSearch2, search1, search2, setSearchState1, set
             <Form type="submit">
                 <Form.Group className="mb-3">
                     <Row>
-                        <Form.Label>Choose any city or town in the United States!</Form.Label>
+                        <Form.Label>Choose any city or town in the United States</Form.Label>
                     </Row>
                     <Row>
                         <Col>
                             <Form.Control 
+                                name='inputCity1'
                                 type="text"
-                                id="city1"
                                 placeholder="i.e. Los Angeles"
-                                onInput={handleChange1}
-                                value={search1}>
+                                onInput={cityHandler}
+                                value= {searchForm.inputCity1}>
                             </Form.Control>
                         </Col>
                         <Col>
                             <Dropdown>
                                 <DropdownButton
+                                name='inputState1'
+                                value={searchForm.inputState1}
+                                onSelect={stateHandler}
                                 variant="dark"
                                 menuVariant="dark"
-                                title={searchState1}
                                 className="mt-2"
                                 id="choose-state"
-                                onSelect={handleStateChange1}>
-                                    {states.map(state => (
+                                >
+                                    {statesArray.map(state => (
                                         <Dropdown.Item
-                                        eventKey={state}
-                                        key={state}>
+                                        eventKey={searchForm.inputState1}>
                                             {state}
                                         </Dropdown.Item>
                                     ))}
@@ -79,26 +114,27 @@ const Search = ({ setSearch1, setSearch2, search1, search2, setSearchState1, set
                     <Row>
                         <Col>
                             <Form.Control
+                                name='inputCity2'
                                 type="text"
-                                id="city2"
                                 placeholder="i.e. San Francisco"
-                                onInput={handleChange2}
-                                value={search2}>
+                                onInput={cityHandler}
+                                value={searchForm.inputCity2}>
                             </Form.Control>
                         </Col>
                         <Col>
                             <Dropdown>
                                 <DropdownButton
+                                name='inputState2'
+                                value={searchForm.inputState2}
+                                onSelect={stateHandler}
                                 variant="dark"
                                 menuVariant="dark"
-                                title={searchState2}
                                 className="mt-2"
                                 id="choose-state"
-                                onSelect={handleStateChange2}>
-                                    {states.map(state => (
+                                >
+                                    {statesArray.map(state => (
                                         <Dropdown.Item
-                                        eventKey={state}
-                                        key={state}>
+                                        eventKey={searchForm.inputState2}>
                                             {state}
                                         </Dropdown.Item>
                                     ))}
@@ -112,8 +148,8 @@ const Search = ({ setSearch1, setSearch2, search1, search2, setSearchState1, set
                 variant="dark" 
                 size="lg" 
                 type="submit">
-                    <Link to="/compare">
-                        Compare Cities
+                    <Link to="/compare" >
+                        compare cities
                     </Link>
                 </Button>
             </Form>

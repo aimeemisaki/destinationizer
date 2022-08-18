@@ -7,13 +7,13 @@ const Navigation = () => {
     return (
         <Navbar collapseOnSelect variant='light' expand='md' className="px-3" fixed="top">
 			<Navbar.Brand as={Link} to='/'>
-				Destinationzier
+				DESTINATIONIZER
 			</Navbar.Brand>
 			<Navbar.Toggle aria-controls='basic-navbar-nav' />
 			<Navbar.Collapse id='basic-navbar-nav'>
 				<Nav>
 					<Nav.Link as={Link} to='/'>
-						Home
+						ABOUT
 					</Nav.Link>
 				</Nav>
 			</Navbar.Collapse>

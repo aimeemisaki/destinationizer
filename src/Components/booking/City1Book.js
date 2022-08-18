@@ -1,44 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import Image from 'react-bootstrap/Image';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import React, { useEffect, useState } from 'react';
+import { Image, Container, Row, Col } from 'react-bootstrap';
 import Airbnb from '../Images/airbnb.png';
 import RentalCar from '../Images/rental-car.png';
 import TourGuide from '../Images/tour-guide.png';
 
-const City2Book = ({ city2 }) => {
-    const [city2Airbnb, setCity2Airbnb] = useState();
-    const [city2Kayak, setCity2Kayak] = useState();
-    const [city2GetYourGuide, setCity2GetYourGuide] = useState();
 
-    const getCity2Booking = () => {
-        if (city2) {
-        let newCity2Airbnb = city2.data.attributes.airbnb_url
-        setCity2Airbnb(newCity2Airbnb);
+const City1Book = ({ city1 }) => {
+    const [city1Airbnb, setCity1Airbnb] = useState();
+    const [city1Kayak, setCity1Kayak] = useState();
+    const [city1GetYourGuide, setCity1GetYourGuide] = useState();
 
-        let newCity2Kayak = city2.data.attributes.kayak_car_rental_url
-        setCity2Kayak(newCity2Kayak);
-     
-        let newCity2GetYourGuide = city2.data.attributes.getyourguide_url
-        setCity2GetYourGuide(newCity2GetYourGuide);
+    const getCity1Booking = () => {
+        if (city1) {
+        let newCity1Airbnb = city1.data.attributes.airbnb_url
+        setCity1Airbnb(newCity1Airbnb);
+
+        let newCity1Kayak = city1.data.attributes.kayak_car_rental_url
+        setCity1Kayak(newCity1Kayak);
+   
+        let newCity1GetYourGuide = city1.data.attributes.getyourguide_url
+        setCity1GetYourGuide(newCity1GetYourGuide);
         }
     };
-
-
     useEffect(() => {
-        getCity2Booking()
-    }, [city2]);
+        getCity1Booking()
+    }, [city1]);
 
-    if (!city2) {
+    if (!city1) {
         return null
     }
     return (
-        <Container 
-        className="mt-5 p-5 bg-light border rounded-3 flex-row">
+        <Container className="mt-5 p-5 bg-light border rounded-3 flex-row">
             <Row>
                 <Col>
-                    <a href={city2Airbnb}>
+                    <a href={city1Airbnb}>
                         <Image 
                         src={Airbnb}
                         alt="Access Airbnb Website"
@@ -48,7 +43,7 @@ const City2Book = ({ city2 }) => {
                     </a>
                 </Col>
                 <Col>
-                    <a href={city2Kayak}>
+                    <a href={city1Kayak}>
                         <Image 
                         src={RentalCar}
                         alt="Access Kayak Website"
@@ -58,7 +53,7 @@ const City2Book = ({ city2 }) => {
                     </a>
                 </Col>
                 <Col>
-                    <a href={city2GetYourGuide}>
+                    <a href={city1GetYourGuide}>
                         <Image 
                         src={TourGuide}
                         alt="Access GetYourGuide Website"
@@ -81,7 +76,6 @@ const City2Book = ({ city2 }) => {
             </Row>
         </Container>
     )
-
 }
 
-export default City2Book
+export default City1Book
