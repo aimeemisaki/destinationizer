@@ -4,7 +4,7 @@
 import React, { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Search from './components/search/searchForm'
-// import Compare from './Pages/Compare';
+import Compare from './components/searchResults/Compare';
 // import Book from './Pages/Book';
 import Navigation from './components/Navigation';
 
@@ -62,9 +62,9 @@ function App() {
       <main>
         <Routes>
           <Route path ="/" element={<Search />} />
-          {/* <Route path="/compare" element= {<Compare city1={city1} city2={city2} getData1={getData1} getData2={getData2} search1={search1} search2={search2} searchState1={searchState1} searchState2={searchState2} error={error}/>} />
-          <Route path="/book/:cityId" element={<Book city1={city1} city2={city2} />} /> */}
-          <Route path="*" element={<Navigate to ="/" />} />
+          <Route path="/compare/:city1/:state1/:city2/:state2" element={<Compare />} />
+          {/* <Route path="/book/:cityId" element={<Book city1={city1} city2={city2} />} /> */}
+          {/* <Route path="*" element={<Navigate to ="/" />} /> */}
         </Routes>
       </main>
     </>

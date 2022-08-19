@@ -1,31 +1,16 @@
-import { Link } from 'react-router-dom';
-import { useReducer } from 'react';
+import { Link, } from 'react-router-dom';
+import { useReducer, useEffect } from 'react';
 import { statesArray } from '../../data-and-functions/statesArray';
 import { searchReducer } from '../../data-and-functions/searchReducer';
 import { Form, Button, Dropdown, DropdownButton, Container, Row, Col } from 'react-bootstrap';
+import DropdownToggle from 'react-bootstrap/DropdownToggle'
 
 
 const Search = () => {
-    // const handleChange1 = (event) => {
-    //     setSearch1(event.target.value)
-    // };
-    // const handleChange2 = (event) => {
-    //     setSearch2(event.target.value)
-    // };
-
-    // const handleStateChange1 = (event) => {
-    //     setSearchState1(event)
-    // };
-
-    // const handleStateChange2 = (event) => {
-    //     setSearchState2(event)
-    // };
-    // Initial state for searchCriteria
-    // ===========================================================================
 
     const initialState = {
-        inputState1: 'State',
-        inputState2: 'State',
+        inputState1: '',
+        inputState2: '',
         inputCity1: '',
         inputCity2: ''
     }
@@ -39,21 +24,23 @@ const Search = () => {
   // Functions
   // ===========================================================================
 
-    const cityHandler = (event) => {
-        dispatch({
-            type: 'update',
-            input: { key: event.target.name, value: event.target.value }
-        })
-    }
 
-    const stateHandler = (event) => {
-        dispatch({
-            type: 'update',
-            input: { key: event.target.name, value: event }
-        })
-    }
+        const cityHandler = (event) => {
+            dispatch({
+                type: 'update',
+                input: { key: event.target.name, value: event.target.value }
+            })
+        }
 
-    console.log(statesArray)
+        const stateHandler = (event) => {
+            dispatch({
+                type: 'update',
+                input: { key: event.target.name, value: event.target.text }
+            })
+        }
+
+        
+    
     console.log(searchForm.inputCity1)
     console.log(searchForm.inputCity2)
     console.log(searchForm.inputState1)
@@ -87,22 +74,22 @@ const Search = () => {
                         </Col>
                         <Col>
                             <Dropdown>
-                                <DropdownButton
-                                name='inputState1'
-                                value={searchForm.inputState1}
-                                onSelect={stateHandler}
-                                variant="dark"
-                                menuVariant="dark"
+                                <DropdownToggle variant='dark'>
+                                { searchForm.inputState1 || 'State' }
+                                </DropdownToggle>
+                                <Dropdown.Menu
                                 className="mt-2"
                                 id="choose-state"
                                 >
                                     {statesArray.map(state => (
                                         <Dropdown.Item
-                                        eventKey={searchForm.inputState1}>
+                                        name='inputState1'
+                                        onClick={stateHandler}
+                                        >
                                             {state}
                                         </Dropdown.Item>
                                     ))}
-                                </DropdownButton>
+                                </Dropdown.Menu>
                             </Dropdown>
                         </Col>
                     </Row>                  
@@ -122,23 +109,23 @@ const Search = () => {
                             </Form.Control>
                         </Col>
                         <Col>
-                            <Dropdown>
-                                <DropdownButton
-                                name='inputState2'
-                                value={searchForm.inputState2}
-                                onSelect={stateHandler}
-                                variant="dark"
-                                menuVariant="dark"
+                        <Dropdown>
+                                <DropdownToggle variant='dark'>
+                                { searchForm.inputState2 || 'State' }
+                                </DropdownToggle>
+                                <Dropdown.Menu
                                 className="mt-2"
                                 id="choose-state"
                                 >
                                     {statesArray.map(state => (
                                         <Dropdown.Item
-                                        eventKey={searchForm.inputState2}>
+                                        name='inputState2'
+                                        onClick={stateHandler}
+                                        >
                                             {state}
                                         </Dropdown.Item>
                                     ))}
-                                </DropdownButton>
+                                </Dropdown.Menu>
                             </Dropdown>
                         </Col>
                     </Row>
@@ -148,7 +135,7 @@ const Search = () => {
                 variant="dark" 
                 size="lg" 
                 type="submit">
-                    <Link to="/compare" >
+                    <Link to={`/compare/${searchForm.inputCity1}/${searchForm.inputState1}/${searchForm.inputCity2}/${searchForm.inputState2}`}>
                         compare cities
                     </Link>
                 </Button>
