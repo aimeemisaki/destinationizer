@@ -1,9 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Card, Image, Row, Col } from 'react-bootstrap';
+import { apiResultReducer } from '../../data-and-functions/apiResultReducer';
+import { fetchReducer } from '../../data-and-functions/fetchReducer';
 
 
 const City1 = ({ city1 }) => {
+   
+
+    const initialState2 = {
+        name: '',
+        attributes: '',
+        population: '',
+        icons: null
+    }
+
+    
+    const [cityData, dispatch] = useReducer()
+
+
+  
+
+
 
     const [city1Name, setCity1Name] = useState('');
     const [city1Attributes, setCity1Attributes] = useState();
