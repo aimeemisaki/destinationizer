@@ -18,7 +18,7 @@ const Compare = () => {
         error: ''
     }
 
-    const [apiState, dispatch] = useReducer(apiResultReducer, initialState)
+    const [state, dispatch] = useReducer(apiResultReducer, initialState)
 
     useEffect(() => {
         fetchReducer(dispatch, `${endPoint1}`, "Unexpected turbulence! Couldn't find the city you searched for.")

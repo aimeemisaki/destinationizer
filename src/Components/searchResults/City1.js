@@ -8,7 +8,7 @@ import { fetchReducer } from '../../data-and-functions/fetchReducer';
 const City1 = ({ city1 }) => {
    
 
-    const initialState2 = {
+    const initialResultState1 = {
         name: '',
         attributes: '',
         population: '',
@@ -16,7 +16,7 @@ const City1 = ({ city1 }) => {
     }
 
     
-    const [cityData, dispatch] = useReducer()
+    const [city1Data, dispatch] = useReducer()
 
 
   
