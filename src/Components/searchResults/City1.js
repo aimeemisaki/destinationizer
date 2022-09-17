@@ -19,9 +19,8 @@ const City1 = ({ city1 }) => {
         fetchReducer(dispatch, `${city1}`, "Unexpected turbulence! Couldn't find the city you searched for.")
     }, [city1])
 
-   
 
-   
+   console.log(result)
 
 
     

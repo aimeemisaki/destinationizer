@@ -6,19 +6,19 @@ export function fetchReducer(dispatch, endPoint, errorMessage) {
     }
     dispatch({ type: 'loading'})
         fetch(`https://api.roadgoat.com/api/v2/destinations/${endPoint}-usa`, headers)
-            .then(res => {
-                if(res.status === 404) {
+            .then(data => {
+                if(data.status === 404) {
                     return dispatch({
                         type: 'error',
                         error: errorMessage
                     })
-                } else if(res.status === 200 || res.status === 304) {
-                    return res.json()
+                } else if(data.status === 200 || data.status === 304) {
+                    return data.json()
                 }
             })
-            .then(data => {
+            .then(res => {
                 dispatch({type: 'success',
-                data: data
+                res: res
                 })
             })
             .catch(err => {
