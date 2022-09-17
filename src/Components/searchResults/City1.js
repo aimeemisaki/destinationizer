@@ -19,6 +19,7 @@ const City1 = ({ city1 }) => {
     
    const initialState = {
         loading: false,
+        result: null,
         error: ''
     }
 
