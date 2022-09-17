@@ -1,35 +1,29 @@
-import React, { useState, useEffect, useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Card, Image, Row, Col } from 'react-bootstrap';
+// import { Button, Card, Image, Row, Col } from 'react-bootstrap';
 import { apiResultReducer } from '../../data-and-functions/apiResultReducer';
 import { fetchReducer } from '../../data-and-functions/fetchReducer';
 
 
 const City1 = ({ city1 }) => {
-   
-
-    // const initialValue = {
-    //     name: '',
-    //     attributes: '',
-    //     population: '',
-    //     icons: null
-    // }
-
-
-    
-   const initialState = {
+  const initialState = {
         loading: false,
         result: null,
         error: ''
-    }
+  }
 
     const [state, dispatch] = useReducer(apiResultReducer, initialState)
+    const { loading, result, error } = state
 
     useEffect(() => {
         fetchReducer(dispatch, `${city1}`, "Unexpected turbulence! Couldn't find the city you searched for.")
-    }, [])
+    }, [city1])
 
-    console.log()
+   
+
+   
+
+
     
     
     

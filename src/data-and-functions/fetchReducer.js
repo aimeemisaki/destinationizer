@@ -15,5 +15,17 @@ export function fetchReducer(dispatch, endPoint, errorMessage) {
                 } else if(res.status === 200 || res.status === 304) {
                     return res.json()
                 }
-            })         
+            })
+            .then(data => {
+                dispatch({type: 'success',
+                data: data
+                })
+            })
+            .catch(err => {
+                dispatch({
+                    type: 'error',
+                    error: `Unexpected turbulence! Please try again later. Error: ${err}`
+                })
+            })    
+                
 }
