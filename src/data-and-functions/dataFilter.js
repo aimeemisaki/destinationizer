@@ -18,9 +18,30 @@ export function iconsFilter (input) {
     return iconsArr
 }
 
-export function populationFixer (num) {
-    return num.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+// export function populationFixer (num) {
+//     return num.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+// }
+
+function budgetNumFilter (input) {
+    const city = input.name
+    const keysArr = (Object.keys(input.budget))
+    keysArr.forEach((key => {
+        if (key === `${city}`) {
+            const ratingsArr = Object.values(input.key)
+            return ratingsArr[0]
+        } 
+    }))
 }
 
+function budgetTextFilter (input) {
+    const city = input.name
+    const keysArr = (Object.keys(input.budget))
+    keysArr.forEach((key => {
+        if (key === `${city}`) {
+            const ratingsArr = Object.values(input.key)
+            return ratingsArr[1]
+        } 
+    }))
+}
 
 

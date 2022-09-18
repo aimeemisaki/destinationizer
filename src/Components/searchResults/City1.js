@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // import { Button, Card, Image, Row, Col } from 'react-bootstrap';
 import { apiResultReducer } from '../../data-and-functions/apiResultReducer';
 import { fetchReducer } from '../../data-and-functions/fetchReducer';
-import { attributesFilter, iconsFilter, populationFixer } from '../../data-and-functions/dataFilter';
+import { attributesFilter, iconsFilter } from '../../data-and-functions/dataFilter';
 
 
 const City1 = ({ city1 }) => {
@@ -14,66 +14,75 @@ const City1 = ({ city1 }) => {
         result: null,
         error: ''
   }
-  // State hooks and variables 
+  // State hooks
   // ===========================================================================
   const [state, dispatch] = useReducer(apiResultReducer, initialState)
   const { loading, result, error } = state
-  // const name = result.data.attributes.name
-  // const attributes = attributesFilter(result.included)
-  // const icons = iconsFilter(result.included)
-  // const population = populationFixer(result.data.attributes.population)
-  
-
+ 
 
   useEffect(() => {
       fetchReducer(dispatch, `${city1}`, "Unexpected turbulence! Couldn't find the city you searched for.")
   }, [city1])
 
-  console.log(result.data.attributes.budget)
-    
-    
+  // Variables
+  // ===========================================================================
+  if (!result) {
+    return null 
+  } 
+  const name = result.data.attributes.name
+  const attributes = attributesFilter(result.included)
+  const icons = iconsFilter(result.included)
+  
+  // const population = populationFixer(result.data.attributes.population)
   
 
+  
 
-//     const [city1Name, setCity1Name] = useState('');
-//     const [city1Attributes, setCity1Attributes] = useState();
-//     const [city1Population, setCity1Population] = useState('');
-//     const [city1Icons, setCity1Icons] = useState();
+  //   }
+    // const cityArr = []
+    // const city = result.data.attributes.name
+    // cityArr.push(city)
+    // for (let i=0; i < result.data.attributes.budget.length; i++) {
+    //   if (Object.keys(result.data.attributes.budget[i]) === `${cityArr}`) {
+    //     const budgetArr = Object.values(result.data.attributes.budget)
+    //     // []
+    //     // if (Object.keys(budgetObj) === 'text') {
+    //     //     return Object.values(budgetObj)
+    //     }
+    // }
     
-    
-    
-//     const getCity1 = () => {
-//         if (city1) {
-//         let city1Arr = []
-//         let city1IconArr = []
-//         for (let i=0; i<city1.included.length; i++) {
-//             if (city1.included[i].type.includes('known_for')) {
-//                 city1Arr.push(city1.included[i].attributes.name)
-//                 city1IconArr.push(city1.included[i].attributes.icon)
-//             } 
-//         }
-//         setCity1Attributes(city1Arr);
-//         setCity1Icons(city1IconArr);
-
-//         let newCity1Name = city1.data.attributes.name;
-//         setCity1Name(newCity1Name)
         
-//         let newCity1Population = city1.data.attributes.population
-//         setCity1Population(newCity1Population);
-//         }
-//     }
+    // } 
 
-//     useEffect(() => {
-//         getCity1()
-//     }, [city1]);
+  const ratings = Object.values(result.data.attributes.budget.California)
+  console.log(ratings[0])
+    // console.log(Object.values(result.data.attributes.budget))
+    // array ['Los Angeles, CA', 'California', 'United States']
 
-
-// if (!city1) {
-//     return null
-// }
   return (
     <>
-    <h1></h1>
+    <h2>{name}</h2>
+    <div>
+      {attributes && attributes.map (
+        attribute => (
+          <div>
+            <p>{attribute}</p>
+          </div>
+        )
+      )} 
+    </div>
+    <div>
+      {icons && icons.map (
+        icon => (
+          <div>
+            <img src={icon+".svg"} alt="icons"/>
+          </div>
+        )
+      )}
+    </div>
+
+
+
     </>
     // <Card className ="mt-4 px-2 py-2" border="dark" style={{ width: '18rem' }}>
     //     <Card.Title>{city1Name}</Card.Title>
