@@ -1,13 +1,14 @@
 import { Link, } from 'react-router-dom';
-import { useReducer, useEffect } from 'react';
+import { useReducer } from 'react';
 import { statesArray } from '../../data-and-functions/statesArray';
 import { searchReducer } from '../../data-and-functions/searchReducer';
-import { Form, Button, Dropdown, DropdownButton, Container, Row, Col } from 'react-bootstrap';
-import DropdownToggle from 'react-bootstrap/DropdownToggle'
+import { Form, Dropdown, Container, Row, Col } from 'react-bootstrap';
+import './Search.css';
 
 
 const Search = () => {
-
+    // Initial state for searchReducer
+    // ===========================================================================
     const initialState = {
         inputState1: '',
         inputState2: '',
@@ -15,14 +16,14 @@ const Search = () => {
         inputCity2: ''
     }
 
-   // State Hooks and Variables
-  // ===========================================================================
+    // State Hooks and Variables
+    // ===========================================================================
     
     const [searchForm, dispatch] = useReducer(searchReducer, initialState)
 
 
-  // Functions
-  // ===========================================================================
+    // Event Handlers
+    // ===========================================================================
 
 
         const cityHandler = (event) => {
@@ -40,107 +41,150 @@ const Search = () => {
         }
 
         
-    
-    console.log(searchForm.inputCity1)
-    console.log(searchForm.inputCity2)
-    console.log(searchForm.inputState1)
-    console.log(searchForm.inputState2)
     if (!searchForm) {
         return <Container>Loading...</Container>
     }
     return (
-        <Container className="bg-transparent mt-5 pt-5 pb-4 mx-auto">
-            <Container fluid className="py-4">
-                <Row>
-                    <Col>
-                        <h2 className="text-center">Looking for a destination, but don't know where? Compare here.</h2>
-                    </Col>
-                </Row>
-            </Container>
-            <Form type="submit">
-                <Form.Group className="mb-3">
-                    <Row>
-                        <Form.Label>Choose any city or town in the United States</Form.Label>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <Form.Control 
-                                name='inputCity1'
-                                type="text"
-                                placeholder="i.e. Los Angeles"
-                                onInput={cityHandler}
-                                value= {searchForm.inputCity1}>
-                            </Form.Control>
-                        </Col>
-                        <Col>
-                            <Dropdown>
-                                <DropdownToggle variant='dark'>
-                                { searchForm.inputState1 || 'State' }
-                                </DropdownToggle>
-                                <Dropdown.Menu
-                                className="mt-2"
-                                id="choose-state"
-                                >
-                                    {statesArray.map(state => (
-                                        <Dropdown.Item
-                                        name='inputState1'
-                                        onClick={stateHandler}
+        <>
+        <video id="search-video" autoplay="autoplay" loop="true" muted defaultmuted playsinline src="https://assets.mixkit.co/videos/preview/mixkit-walking-a-wide-path-very-close-to-the-pavement-39940-large.mp4">
+  		</video>
+        <div class="grid place-items-center h-screen">
+            <div id="search-container" class="rounded-md w-112 h-96 md:h-112 md:w-112">
+                <header class="pb-8 md:pb-12 pt-10">
+                    <h1 id='search-header'>
+						Looking for your next travel destination?<br/>Compare here.
+					</h1>
+                </header>
+                <Form type="submit">
+                    <div class="grid place-items-center">
+                        <Form.Group className="mb-3">
+                            <Row>
+                                <Col>
+                                    
+                                    <input
+                                        name='inputCity1'
+                                        type="text"
+                                        placeholder="i.e. Los Angeles"
+                                        onInput={cityHandler}
+                                        value= {searchForm.inputCity1}
+                                        id="search-input"
+                                        class=" 
+                                        contact-text
+                                        block
+                                        w-full
+                                        mt-1
+                                        border-gray-600
+                                        rounded-md
+                                        shadow-sm
+                                        focus:border-indigo-300
+                                        focus:ring
+                                        focus:ring-indigo-200
+                                        focus:ring-opacity-50
+                                        bg-white
+                                        placeholder-gray-500
+                                        text-zinc-900
+                                    ">
+                                    </input>
+                                </Col>
+                                <Col>
+                                    <Dropdown>
+                                        <Dropdown.Toggle variant='dark' className="border-white" id="search-text">
+                                        { searchForm.inputState1 || 'State' }
+                                        </Dropdown.Toggle>
+                                        <Dropdown.Menu
+                                        className="mt-2"
+                                        id="dropdown-menu"
                                         >
-                                            {state}
-                                        </Dropdown.Item>
-                                    ))}
-                                </Dropdown.Menu>
-                            </Dropdown>
-                        </Col>
-                    </Row>                  
-                </Form.Group>
-                <Form.Group className="mb-3">
-                    <Row>
-                        <Form.Label>Choose any city or town in the United States to compare!</Form.Label>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <Form.Control
-                                name='inputCity2'
-                                type="text"
-                                placeholder="i.e. San Francisco"
-                                onInput={cityHandler}
-                                value={searchForm.inputCity2}>
-                            </Form.Control>
-                        </Col>
-                        <Col>
-                        <Dropdown>
-                                <DropdownToggle variant='dark'>
-                                { searchForm.inputState2 || 'State' }
-                                </DropdownToggle>
-                                <Dropdown.Menu
-                                className="mt-2"
-                                id="choose-state"
-                                >
-                                    {statesArray.map(state => (
-                                        <Dropdown.Item
-                                        name='inputState2'
-                                        onClick={stateHandler}
+                                            {statesArray.map(state => (
+                                                <Dropdown.Item
+                                                name='inputState1'
+                                                onClick={stateHandler}
+                                                >
+                                                    {state}
+                                                </Dropdown.Item>
+                                            ))}
+                                        </Dropdown.Menu>
+                                    </Dropdown>
+                                </Col>
+                            </Row>                  
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Row>
+                                <Col>
+                                    <input
+                                        name='inputCity2'
+                                        type="text"
+                                        placeholder="i.e. Atlanta"
+                                        onInput={cityHandler}
+                                        value={searchForm.inputCity2}
+                                        id="search-input"
+                                        class=" 
+                                        contact-text
+                                        block
+                                        w-full
+                                        mt-1
+                                        border-gray-600
+                                        rounded-md
+                                        shadow-sm
+                                        focus:border-indigo-300
+                                        focus:ring
+                                        focus:ring-indigo-200
+                                        focus:ring-opacity-50
+                                        bg-white
+                                        placeholder-gray-500
+                                        text-zinc-900
+                                    ">
+                                    </input>
+                                </Col>
+                                <Col>
+                                <Dropdown>
+                                        <Dropdown.Toggle variant='dark' className="border-white" id="search-text">
+                                        { searchForm.inputState2 || 'State' }
+                                        </Dropdown.Toggle>
+                                        <Dropdown.Menu
+                                        className="mt-2"
+                                        id="dropdown-menu"
                                         >
-                                            {state}
-                                        </Dropdown.Item>
-                                    ))}
-                                </Dropdown.Menu>
-                            </Dropdown>
-                        </Col>
-                    </Row>
-                </Form.Group>
-                <Button 
-                className ="btn d-flex align-center justify-content-center btn-block" 
-                variant="dark" 
-                size="lg" 
-                type="submit">
-                    <Link to={`/compare/${searchForm.inputCity1}/${searchForm.inputState1}/${searchForm.inputCity2}/${searchForm.inputState2}`}>
-                        compare cities
-                    </Link>
-                </Button>
-            </Form>
-        </Container>
+                                            {statesArray.map(state => (
+                                                <Dropdown.Item
+                                                name='inputState2'
+                                                onClick={stateHandler}
+                                                >
+                                                    {state}
+                                                </Dropdown.Item>
+                                            ))}
+                                        </Dropdown.Menu>
+                                    </Dropdown>
+                                </Col>
+                            </Row>
+                        </Form.Group>
+                    </div>
+                    <div class="grid place-items-center">
+                        <button
+                        type="submit"
+                        id="search-text"
+                        class="
+                            contact-header
+                            h-10
+                            px-5
+                            text-stone-50
+                            bg-neutral-700
+                            rounded-lg
+                            transition-colors
+                            duration-150
+                            focus:shadow-outline
+                            hover:bg-stone-50
+                            hover:text-zinc-900"
+                            >
+                            <Link to={`/compare/${searchForm.inputCity1}/${searchForm.inputState1}/${searchForm.inputCity2}/${searchForm.inputState2}`}>
+                                COMPARE CITIES
+                            </Link>
+                        </button>
+                    </div>
+                </Form>
+            </div>
+        </div>
+        </>
     )
 }
 
