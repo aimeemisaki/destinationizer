@@ -7,7 +7,7 @@ export function attributesFilter (input) {
     }
     return attributesArr
 }
- 
+
 export function iconsFilter (input) {
     const iconsArr = []
     for (let i=0; i < input.length; i++ ) {
@@ -17,5 +17,10 @@ export function iconsFilter (input) {
     }
     return iconsArr
 }
+
+export function populationFixer (num) {
+    return num.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
+}
+
 
 

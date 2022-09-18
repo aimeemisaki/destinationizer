@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // import { Button, Card, Image, Row, Col } from 'react-bootstrap';
 import { apiResultReducer } from '../../data-and-functions/apiResultReducer';
 import { fetchReducer } from '../../data-and-functions/fetchReducer';
-import { attributesFilter, iconsFilter } from '../../data-and-functions/dataFilter';
+import { attributesFilter, iconsFilter, populationFixer } from '../../data-and-functions/dataFilter';
 
 
 const City1 = ({ city1 }) => {
@@ -18,9 +18,10 @@ const City1 = ({ city1 }) => {
   // ===========================================================================
   const [state, dispatch] = useReducer(apiResultReducer, initialState)
   const { loading, result, error } = state
-  const name = result.data.attributes.name
-  const attributes = attributesFilter(result.included)
-  const icons = iconsFilter(result.included)
+  // const name = result.data.attributes.name
+  // const attributes = attributesFilter(result.included)
+  // const icons = iconsFilter(result.included)
+  // const population = populationFixer(result.data.attributes.population)
   
 
 
@@ -28,7 +29,7 @@ const City1 = ({ city1 }) => {
       fetchReducer(dispatch, `${city1}`, "Unexpected turbulence! Couldn't find the city you searched for.")
   }, [city1])
 
-  console.log(result.data.attributes.name)
+  console.log(result.data.attributes.budget)
     
     
   
