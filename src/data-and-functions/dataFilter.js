@@ -22,7 +22,7 @@ export function iconsFilter (input) {
 //     return num.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
 // }
 
-function budgetNumFilter (input) {
+export function budgetNumFilter (input) {
     const city = input.name
     const keysArr = (Object.keys(input.budget))
     keysArr.forEach((key => {
@@ -33,7 +33,7 @@ function budgetNumFilter (input) {
     }))
 }
 
-function budgetTextFilter (input) {
+export function budgetTextFilter (input) {
     const city = input.name
     const keysArr = (Object.keys(input.budget))
     keysArr.forEach((key => {
