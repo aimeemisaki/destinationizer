@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // import { Button, Card, Image, Row, Col } from 'react-bootstrap';
 import { apiResultReducer } from '../../data-and-functions/apiResultReducer';
 import { fetchReducer } from '../../data-and-functions/fetchReducer';
-import { attributesFilter, iconsFilter, budgetNumFilter } from '../../data-and-functions/dataFilter';
+import { attributesFilter, iconsFilter, budgetNumFilter, budgetTextFilter } from '../../data-and-functions/dataFilter';
 
 
 const City1 = ({ city1 }) => {
@@ -33,8 +33,7 @@ const City1 = ({ city1 }) => {
   const attributes = attributesFilter(result.included)
   const icons = iconsFilter(result.included)
   const numBudget = budgetNumFilter(result.data.attributes)
-  
-  // const textBudget = budgetTextFilter(result.data.attributes)
+  const textBudget = budgetTextFilter(result.data.attributes)
   // const population = populationFixer(result.data.attributes.population)
   
   
@@ -70,6 +69,7 @@ const City1 = ({ city1 }) => {
     <>
     <h2>{name}</h2>
     <h1>{numBudget}</h1>
+    <h1>{textBudget}</h1>
     <div>
       {attributes && attributes.map (
         attribute => (
