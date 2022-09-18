@@ -18,9 +18,9 @@ export function iconsFilter (input) {
     return iconsArr
 }
 
-// export function populationFixer (num) {
-//     return num.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")
-// }
+export function populationFixer(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 export function budgetNumFilter (input) {
     const keys = Object.keys(input.budget)

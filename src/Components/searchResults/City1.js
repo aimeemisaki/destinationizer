@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // import { Button, Card, Image, Row, Col } from 'react-bootstrap';
 import { apiResultReducer } from '../../data-and-functions/apiResultReducer';
 import { fetchReducer } from '../../data-and-functions/fetchReducer';
-import { attributesFilter, iconsFilter, budgetNumFilter, budgetTextFilter } from '../../data-and-functions/dataFilter';
+import { attributesFilter, iconsFilter, budgetNumFilter, budgetTextFilter, populationFixer } from '../../data-and-functions/dataFilter';
 
 
 const City1 = ({ city1 }) => {
@@ -34,42 +34,17 @@ const City1 = ({ city1 }) => {
   const icons = iconsFilter(result.included)
   const numBudget = budgetNumFilter(result.data.attributes)
   const textBudget = budgetTextFilter(result.data.attributes)
-  // const population = populationFixer(result.data.attributes.population)
+  const population = populationFixer(result.data.attributes.population)
   
   
-  
-
-
-  //   }
-    // const cityArr = []
-    // const city = result.data.attributes.name
-    // cityArr.push(city)
-    // for (let i=0; i < result.data.attributes.budget.length; i++) {
-    //   if (Object.keys(result.data.attributes.budget[i]) === `${cityArr}`) {
-    //     const budgetArr = Object.values(result.data.attributes.budget)
-    //     // []
-    //     // if (Object.keys(budgetObj) === 'text') {
-    //     //     return Object.values(budgetObj)
-    //     }
-    // }
-    
-        
-    // } 
-
-  // const ratings = Object.values(result.data.attributes.budget)
-  // console.log(ratings[0])
-  // if Object.key == .name
-  // Object.value(result.data.attributes.budget)
-
-    // const key = (Object.keys(result.data.attributes.budget))
-    // console.log(key[0])
-    // array ['Los Angeles, CA', 'California', 'United States']
+  console.log(result.included)
 
   return (
     <>
     <h2>{name}</h2>
     <h1>{numBudget}</h1>
     <h1>{textBudget}</h1>
+    <p>{population}</p>
     <div>
       {attributes && attributes.map (
         attribute => (
