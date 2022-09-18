@@ -23,25 +23,31 @@ export function iconsFilter (input) {
 // }
 
 export function budgetNumFilter (input) {
-    const city = input.name
-    const keysArr = (Object.keys(input.budget))
-    keysArr.forEach((key => {
-        if (key === `${city}`) {
-            const ratingsArr = Object.values(input.key)
-            return ratingsArr[0]
-        } 
-    }))
-}
+    const keys = Object.keys(input.budget)
+    const values = Object.values(input.budget)
+    for (let i=0; i < keys.length; i++ ) {
+      if (keys[i] === `${input.name}` ) {
+        const budgetObjs = values[0]
+        const budgetKeys = Object.keys(budgetObjs)
+        const budgetValues = Object.values(budgetObjs)
+        for (let j=0; j < budgetKeys.length; j++) {
+          if (budgetKeys[j] === 'value') {
+            return budgetValues[j]
+          }
+        }
+      }
+    }
+  }
 
-export function budgetTextFilter (input) {
-    const city = input.name
-    const keysArr = (Object.keys(input.budget))
-    keysArr.forEach((key => {
-        if (key === `${city}`) {
-            const ratingsArr = Object.values(input.key)
-            return ratingsArr[1]
-        } 
-    }))
-}
+// export function budgetTextFilter (input) {
+//     const city = input.name
+//     const keysArr = (Object.keys(input.budget))
+//     keysArr.forEach((key => {
+//         if (key === `${city}`) {
+//             const ratingsArr = Object.values(input.budget.key)
+//             return ratingsArr[1]
+//         } 
+//     }))
+// }
 
 

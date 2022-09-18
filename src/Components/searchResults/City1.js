@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 // import { Button, Card, Image, Row, Col } from 'react-bootstrap';
 import { apiResultReducer } from '../../data-and-functions/apiResultReducer';
 import { fetchReducer } from '../../data-and-functions/fetchReducer';
-import { attributesFilter, iconsFilter, budgetNumFilter, budgetTextFilter } from '../../data-and-functions/dataFilter';
+import { attributesFilter, iconsFilter, budgetNumFilter } from '../../data-and-functions/dataFilter';
 
 
 const City1 = ({ city1 }) => {
@@ -32,11 +32,14 @@ const City1 = ({ city1 }) => {
   const name = result.data.attributes.name
   const attributes = attributesFilter(result.included)
   const icons = iconsFilter(result.included)
- 
+  const numBudget = budgetNumFilter(result.data.attributes)
+  
+  // const textBudget = budgetTextFilter(result.data.attributes)
   // const population = populationFixer(result.data.attributes.population)
   
-
   
+  
+
 
   //   }
     // const cityArr = []
@@ -54,14 +57,19 @@ const City1 = ({ city1 }) => {
         
     // } 
 
-  const ratings = Object.values(result.data.attributes.budget.California)
-  console.log(ratings[0])
-    // console.log(Object.values(result.data.attributes.budget))
+  // const ratings = Object.values(result.data.attributes.budget)
+  // console.log(ratings[0])
+  // if Object.key == .name
+  // Object.value(result.data.attributes.budget)
+
+    // const key = (Object.keys(result.data.attributes.budget))
+    // console.log(key[0])
     // array ['Los Angeles, CA', 'California', 'United States']
 
   return (
     <>
     <h2>{name}</h2>
+    <h1>{numBudget}</h1>
     <div>
       {attributes && attributes.map (
         attribute => (
@@ -80,6 +88,7 @@ const City1 = ({ city1 }) => {
         )
       )}
     </div>
+    
 
 
 
