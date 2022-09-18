@@ -3,27 +3,35 @@ import { Link } from 'react-router-dom';
 // import { Button, Card, Image, Row, Col } from 'react-bootstrap';
 import { apiResultReducer } from '../../data-and-functions/apiResultReducer';
 import { fetchReducer } from '../../data-and-functions/fetchReducer';
+import { attributesFilter, iconsFilter } from '../../data-and-functions/dataFilter';
 
 
 const City1 = ({ city1 }) => {
+  // Initial state for apiResultReducer
+  // ===========================================================================
   const initialState = {
         loading: false,
         result: null,
         error: ''
   }
+  // State hooks and variables 
+  // ===========================================================================
+  const [state, dispatch] = useReducer(apiResultReducer, initialState)
+  const { loading, result, error } = state
+  const name = result.data.attributes.name
+  const attributes = attributesFilter(result.included)
+  const icons = iconsFilter(result.included)
+  
 
-    const [state, dispatch] = useReducer(apiResultReducer, initialState)
-    const { loading, result, error } = state
-   
 
-    useEffect(() => {
-        fetchReducer(dispatch, `${city1}`, "Unexpected turbulence! Couldn't find the city you searched for.")
-    }, [city1])
+  useEffect(() => {
+      fetchReducer(dispatch, `${city1}`, "Unexpected turbulence! Couldn't find the city you searched for.")
+  }, [city1])
 
-    console.log(result.data.attributes.name)
-    const name = result.data.attributes.name
-
-    console.log(result.data.attributes.budget)
+  console.log(result.data.attributes.name)
+    
+    
+  
 
 
 //     const [city1Name, setCity1Name] = useState('');
