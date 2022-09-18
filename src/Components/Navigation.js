@@ -1,22 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import { Navbar, Nav, Container } from 'react-bootstrap/Navbar';
 
 const Navigation = () => {
     return (
-        <Navbar collapseOnSelect variant='light' expand='md' className="px-3" fixed="top">
-			<Navbar.Brand as={Link} to='/'>
-				DESTINATIONIZER
-			</Navbar.Brand>
-			<Navbar.Toggle aria-controls='basic-navbar-nav' />
-			<Navbar.Collapse id='basic-navbar-nav'>
-				<Nav>
-					<Nav.Link as={Link} to='/'>
-						ABOUT
-					</Nav.Link>
-				</Nav>
-			</Navbar.Collapse>
+        <Navbar collapseOnSelect variant='light' expand='lg' fixed="top">
+			<Container>
+				<Navbar.Brand as={Link} to='/'>
+					<h2 id="navbar-brand">DESTINATIONIZER</h2>
+				</Navbar.Brand>
+				<Navbar.Toggle aria-controls='basic-navbar-nav' />
+				<Navbar.Collapse id='basic-navbar-nav'>
+					<Nav>
+						<Nav.Link as={Link} to='/' id="navbar-text">
+							ABOUT
+						</Nav.Link>
+					</Nav>
+				</Navbar.Collapse>
+			</Container>
 		</Navbar>
     )
 }

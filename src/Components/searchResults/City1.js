@@ -14,19 +14,16 @@ const City1 = ({ city1 }) => {
 
     const [state, dispatch] = useReducer(apiResultReducer, initialState)
     const { loading, result, error } = state
+   
 
     useEffect(() => {
         fetchReducer(dispatch, `${city1}`, "Unexpected turbulence! Couldn't find the city you searched for.")
     }, [city1])
 
+    console.log(result.data.attributes.name)
+    const name = result.data.attributes.name
 
-   console.log(result)
-
-
-    
-    
-    
-
+    console.log(result.data.attributes.budget)
 
 
 //     const [city1Name, setCity1Name] = useState('');
@@ -66,7 +63,9 @@ const City1 = ({ city1 }) => {
 //     return null
 // }
   return (
-    <></>
+    <>
+    <h1></h1>
+    </>
     // <Card className ="mt-4 px-2 py-2" border="dark" style={{ width: '18rem' }}>
     //     <Card.Title>{city1Name}</Card.Title>
     //     <Card.Subtitle className="mb-2 text-muted">
