@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { apiResultReducer } from '../../data-and-functions/apiResultReducer';
 import { fetchReducer } from '../../data-and-functions/fetchReducer';
 import { attributesFilter, iconsFilter, budgetNumFilter, budgetTextFilter, populationFixer } from '../../data-and-functions/dataFilter';
-// import { Button, Card, Image, Row, Col }from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 
 const City2 = ( { city2 }) => {
@@ -39,45 +39,76 @@ const City2 = ( { city2 }) => {
     
 
     return (
-    <></>
-    // <Card className="mt-4 px-2 py-2" border="dark" style={{ width: '18rem' }}>
-    //     <Card.Title>{city2Name}</Card.Title>
-    //     <Card.Subtitle className="mb-2 text-muted">
-    //         <strong>Population:</strong> {city2Population} people
-    //     </Card.Subtitle>
-    //     <Card.Header><strong>Known for:</strong></Card.Header>
-    //         <Row>
-    //             <Col>
-    //                 {city2Attributes && city2Attributes.map(city2Attribute  => (
-    //                         <div> 
-    //                             <p>{city2Attribute}</p>
-    //                         </div>
-    //                 ))}
-    //             </Col>
-    //             <Col>
-    //                 {city2Icons && city2Icons.map(city2Icon => (
-    //                     <div>
-    //                         <Image 
-    //                         key={city2Icon.id}
-    //                         src={city2Icon+".svg"}
-    //                         alt="icon"
-    //                         width={35}
-    //                         height={35}
-    //                         style={{ marginRight: "5em", marginTop: ".25em"}}/>
-    //                     </div>
-    //                 ))}
-    //             </Col>
-    //         </Row>
-    //     <Button
-    //     className ="btn d-grid gap-2" 
-    //     variant="dark" 
-    //     size="lg"
-    //     style={{ marginTop: "1em"}}>
-    //         <Link to='/book/2'>
-    //             Book this city!
-    //         </Link>
-    //     </Button>
-    // </Card>
+        <div class="grid place-items-center h-screen">
+            <div id="city-container" class="rounded-full w-80 h-112 md:w-4/12">
+                <p id="city-header">
+                    {name}
+                </p>
+                <p id="city-text">
+                    {numBudget}
+                </p>
+                <p id="city-text">
+                    {textBudget}
+                </p>
+                <p id="city-text">
+                    {population}
+                </p>
+                <Row>
+                    <Col>
+                    <div>
+                        {attributes && attributes.map (
+                        attribute => (
+                            <div>
+                            <p id="city-attribute-text" class="py-1 text-right">
+                                {attribute}
+                            </p>
+                            </div>
+                        )
+                        )} 
+                    </div>
+                    </Col>
+                    <Col>
+                    <div>
+                        {icons && icons.map (
+                        icon => (
+                            <div class="pt-1.5">
+                            <img 
+                            src={icon+".svg"} 
+                            alt="icons"
+                            class="w-6 h-6"
+                            id="city-icon"
+                            />
+                            </div>
+                        )
+                        )}
+                    </div>
+                    </Col>
+                </Row>
+                <div class="grid place-items-center">
+                    <button
+                    type="submit"
+                    id="search-button"
+                    class="
+                        contact-header
+                        h-10
+                        px-5
+                        text-stone-50
+                        bg-neutral-700
+                        rounded-lg
+                        transition-colors
+                        duration-150
+                        focus:shadow-outline
+                        hover:bg-stone-50
+                        "
+                        >
+                        <Link to='/book/1'>
+                            BOOK
+                        </Link>
+                    </button>
+                </div>
+            </div>
+      </div>
+    
     )
 }
 
