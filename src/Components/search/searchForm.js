@@ -46,13 +46,13 @@ const Search = () => {
     }
     return (
         <>
-        <video id="search-video" autoplay="autoplay" loop="true" muted defaultmuted playsinline src="https://assets.mixkit.co/videos/preview/mixkit-walking-a-wide-path-very-close-to-the-pavement-39940-large.mp4">
+        <video id="search-video" autoplay="autoplay" loop="true" muted defaultmuted playsinline src="https://assets.mixkit.co/videos/preview/mixkit-going-down-a-curved-highway-through-a-mountain-range-41576-large.mp4">
   		</video>
         <div class="grid place-items-center h-screen">
-            <div id="search-container" class="rounded-md w-112 h-96 md:h-112 md:w-112">
+            <div id="search-container" class="rounded-md w-80 h-112 md:w-128">
                 <header class="pb-8 md:pb-12 pt-10">
                     <h1 id='search-header'>
-						Looking for your next travel destination?<br/>Compare here.
+						LOOKING FOR YOUR NEXT TRAVEL DESTINATION?<br/>COMPARE HERE.
 					</h1>
                 </header>
                 <Form type="submit">
@@ -71,7 +71,7 @@ const Search = () => {
                                         class=" 
                                         contact-text
                                         block
-                                        w-full
+                                        w-120
                                         mt-1
                                         border-gray-600
                                         rounded-md
