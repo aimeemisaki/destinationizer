@@ -57,7 +57,10 @@ const City1 = ({ city1 }) => {
       {icons && icons.map (
         icon => (
           <div>
-            <img src={icon+".svg"} alt="icons"/>
+            <img 
+            src={icon+".svg"} 
+            alt="icons"
+            />
           </div>
         )
       )}
