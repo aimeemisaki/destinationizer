@@ -29,12 +29,13 @@ const City2 = ( { city2 }) => {
     if (!result) {
     return null 
     } 
-    const name = result.data.attributes.name
+    const city = result.data.attributes
+    const name = city.name
     const attributes = attributesFilter(result.included)
     const icons = iconsFilter(result.included)
-    const numBudget = budgetNumFilter(result.data.attributes)
-    const textBudget = budgetTextFilter(result.data.attributes)
-    const population = populationFixer(result.data.attributes.population)
+    const numBudget = budgetNumFilter(city)
+    const textBudget = budgetTextFilter(city)
+    const population = populationFixer(city.population)
     
 
     return (
