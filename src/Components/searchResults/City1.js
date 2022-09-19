@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { apiResultReducer } from '../../data-and-functions/apiResultReducer';
 import { fetchReducer } from '../../data-and-functions/fetchReducer';
@@ -17,9 +17,10 @@ const City1 = ({ city1 }) => {
         result: null,
         error: ''
   }
-  // State hooks
+  // State hooks and Variables
   // ===========================================================================
   const [state, dispatch] = useReducer(apiResultReducer, initialState)
+  const [buttonShow, setButtonShow] = useState(false)
   const { loading, result, error } = state
  
 
@@ -27,8 +28,7 @@ const City1 = ({ city1 }) => {
       fetchReducer(dispatch, `${city1}`, "Unexpected turbulence! Couldn't find the city you searched for.")
   }, [city1])
 
-  // Variables
-  // ===========================================================================
+
   if (!result) {
     return null 
   } 
