@@ -4,7 +4,7 @@ import { apiResultReducer } from '../../data-and-functions/apiResultReducer';
 import { fetchReducer } from '../../data-and-functions/fetchReducer';
 import { attributesFilter, iconsFilter, budgetNumFilter, budgetTextFilter, populationFixer } from '../../data-and-functions/dataFilter';
 import './Compare.css';
-import { Row, Col, Carousel } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 
 
@@ -41,9 +41,8 @@ const City1 = ({ city1 }) => {
   const population = populationFixer(city.population)
   
   return (
-    <>
     <div class="grid place-items-center h-screen">
-      <div id="search-container" class="rounded-full w-80 h-112 md:w-4/12">
+      <div id="city-container" class="rounded-full w-80 h-112 md:w-4/12">
         <p id="city-header">
           {name}
         </p>
@@ -87,51 +86,31 @@ const City1 = ({ city1 }) => {
             </div>
           </Col>
         </Row>
+        <div class="grid place-items-center">
+          <button
+          type="submit"
+          id="search-button"
+          class="
+              contact-header
+              h-10
+              px-5
+              text-stone-50
+              bg-neutral-700
+              rounded-lg
+              transition-colors
+              duration-150
+              focus:shadow-outline
+              hover:bg-stone-50
+              "
+              >
+              <Link to='/book/1'>
+                  BOOK
+              </Link>
+          </button>
+        </div>
       </div>
     </div>
-    
-
-
-
-    </>
-    // <Card className ="mt-4 px-2 py-2" border="dark" style={{ width: '18rem' }}>
-    //     <Card.Title>{city1Name}</Card.Title>
-    //     <Card.Subtitle className="mb-2 text-muted">
-    //             <strong>Population:</strong> {city1Population} people
-    //     </Card.Subtitle>
-    //     <Card.Header><strong>Known for:</strong></Card.Header>
-    //         <Row>
-    //             <Col>
-    //                 {city1Attributes && city1Attributes.map(city1Attribute  => (
-    //                     <div>
-    //                         <p>{city1Attribute}</p>
-    //                     </div>
-    //                 ))}
-    //             </Col>
-    //             <Col>
-    //                 {city1Icons && city1Icons.map(city1Icon => (
-    //                     <div>
-    //                         <Image 
-    //                         key={city1Icon.id}
-    //                         src={city1Icon+".svg"}
-    //                         alt="icon"
-    //                         width={35}
-    //                         height={35}
-    //                         style={{ marginRight: "5em", marginTop: ".25em"}}/>
-    //                     </div>
-    //                 ))}
-    //             </Col>
-    //         </Row>
-    //     <Button
-    //     className ="btn d-grid gap-2" 
-    //     variant="dark" 
-    //     size="lg"
-    //     style={{ marginTop: "1em"}}>
-    //     <Link to='/book/1'>
-    //         Book this city!
-    //     </Link>
-    //     </Button>
-    // </Card>
+  
   )
     
 }
