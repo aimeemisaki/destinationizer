@@ -15,7 +15,7 @@ const Compare = () => {
         <>
             <video id="search-video" autoplay="autoplay" loop="true" muted defaultmuted playsinline src="https://assets.mixkit.co/videos/preview/mixkit-car-on-a-road-through-the-forest-and-meadow-27001-large.mp4">
   		    </video>
-            <Carousel interval={3000}>
+            <Carousel interval={4000}>
                 <Carousel.Item>
                     <div>
                         <City1 city1={endPoint1}/>
