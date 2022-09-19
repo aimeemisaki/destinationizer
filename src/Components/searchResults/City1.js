@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { apiResultReducer } from '../../data-and-functions/apiResultReducer';
 import { fetchReducer } from '../../data-and-functions/fetchReducer';
 import { attributesFilter, iconsFilter, budgetNumFilter, budgetTextFilter, populationFixer } from '../../data-and-functions/dataFilter';
+import './Compare.css';
 // import { Button, Card, Image, Row, Col } from 'react-bootstrap';
 
 
@@ -40,9 +41,11 @@ const City1 = ({ city1 }) => {
   
   return (
     <>
-    <h2>{name}</h2>
-    <h1>{numBudget}</h1>
-    <h1>{textBudget}</h1>
+    <p id="name-text">
+      {name}
+    </p>
+    <p>{numBudget}</p>
+    <p>{textBudget}</p>
     <p>{population}</p>
     <div>
       {attributes && attributes.map (
@@ -60,6 +63,7 @@ const City1 = ({ city1 }) => {
             <img 
             src={icon+".svg"} 
             alt="icons"
+            class="w-8 h-8"
             />
           </div>
         )
