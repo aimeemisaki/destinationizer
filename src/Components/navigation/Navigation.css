@@ -3,7 +3,15 @@
     color: white;
 }
 
+#navbar-brand:hover {
+    color: #696767;
+}
+
 #navbar-text {
     font-family: 'Raleway', sans-serif;
-    color: grey;
+    color: #696767;
+}
+
+#navbar-text:hover {
+    color: white;
 }

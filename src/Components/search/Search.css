@@ -43,4 +43,10 @@
 #search-button {
     font-family: 'Orbitron', sans-serif;
     font-size: 15px;
+    border: white 1px solid;
 }
+
+#search-button:hover {
+    color: #696767;
+}
+

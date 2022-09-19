@@ -115,7 +115,7 @@ const Search = () => {
                                     <input
                                         name='inputCity2'
                                         type="text"
-                                        placeholder="i.e. Atlanta"
+                                        placeholder="i.e. Denver"
                                         onInput={cityHandler}
                                         value={searchForm.inputCity2}
                                         id="search-input"
@@ -176,7 +176,7 @@ const Search = () => {
                             duration-150
                             focus:shadow-outline
                             hover:bg-stone-50
-                            hover:text-zinc-900"
+                            "
                             >
                             <Link to={`/compare/${searchForm.inputCity1}/${searchForm.inputState1}/${searchForm.inputCity2}/${searchForm.inputState2}`}>
                                 COMPARE CITIES
