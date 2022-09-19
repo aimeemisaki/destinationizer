@@ -1,9 +1,10 @@
 import React, { useEffect, useReducer } from 'react';
 import { Link } from 'react-router-dom';
-// import { Button, Card, Image, Row, Col } from 'react-bootstrap';
 import { apiResultReducer } from '../../data-and-functions/apiResultReducer';
 import { fetchReducer } from '../../data-and-functions/fetchReducer';
 import { attributesFilter, iconsFilter, budgetNumFilter, budgetTextFilter, populationFixer } from '../../data-and-functions/dataFilter';
+// import { Button, Card, Image, Row, Col } from 'react-bootstrap';
+
 
 
 const City1 = ({ city1 }) => {
@@ -36,9 +37,6 @@ const City1 = ({ city1 }) => {
   const textBudget = budgetTextFilter(result.data.attributes)
   const population = populationFixer(result.data.attributes.population)
   
-  
-  console.log(result.included)
-
   return (
     <>
     <h2>{name}</h2>
