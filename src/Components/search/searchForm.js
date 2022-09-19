@@ -49,10 +49,10 @@ const Search = () => {
         <video id="search-video" autoplay="autoplay" loop="true" muted defaultmuted playsinline src="https://assets.mixkit.co/videos/preview/mixkit-going-down-a-curved-highway-through-a-mountain-range-41576-large.mp4">
   		</video>
         <div class="grid place-items-center h-screen">
-            <div id="search-container" class="rounded-md w-80 h-112 md:w-128">
+            <div id="search-container" class="rounded-md w-80 h-112 md:w-5/12">
                 <header class="pb-8 md:pb-12 pt-10">
                     <h1 id='search-header'>
-						LOOKING FOR YOUR NEXT TRAVEL DESTINATION?<br/>COMPARE HERE.
+						LOOKING FOR YOUR NEXT DESTINATION?<br/>COMPARE HERE.
 					</h1>
                 </header>
                 <Form type="submit">
@@ -71,7 +71,7 @@ const Search = () => {
                                         class=" 
                                         contact-text
                                         block
-                                        w-120
+                                        w-44
                                         mt-1
                                         border-gray-600
                                         rounded-md
@@ -83,6 +83,7 @@ const Search = () => {
                                         bg-white
                                         placeholder-gray-500
                                         text-zinc-900
+                                        md:w-200
                                     ">
                                     </input>
                                 </Col>
@@ -121,7 +122,7 @@ const Search = () => {
                                         class=" 
                                         contact-text
                                         block
-                                        w-full
+                                        w-44
                                         mt-1
                                         border-gray-600
                                         rounded-md
@@ -133,6 +134,7 @@ const Search = () => {
                                         bg-white
                                         placeholder-gray-500
                                         text-zinc-900
+                                        md:w-200
                                     ">
                                     </input>
                                 </Col>
@@ -162,7 +164,7 @@ const Search = () => {
                     <div class="grid place-items-center">
                         <button
                         type="submit"
-                        id="search-text"
+                        id="search-button"
                         class="
                             contact-header
                             h-10

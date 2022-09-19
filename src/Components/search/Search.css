@@ -18,8 +18,8 @@
 }
 
 #search-header {
-    font-family: 'Michroma', sans-serif;
-    font-size: 25px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -40,3 +40,7 @@
     font-family: 'Raleway', sans-serif;
 }
 
+#search-button {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+}

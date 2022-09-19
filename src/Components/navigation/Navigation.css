@@ -1,7 +1,9 @@
 #navbar-brand {
     font-family: 'Michroma', sans-serif;
+    color: white;
 }
 
 #navbar-text {
     font-family: 'Raleway', sans-serif;
+    color: grey;
 }
