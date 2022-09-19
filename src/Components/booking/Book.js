@@ -4,21 +4,34 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 
 const Book = () => {
-    // State hooks and Variables
+    // State hook and Variables
     // ===========================================================================
     const location = useLocation()
     const city = location.state.data.attributes
+    const name = city.name
     const airbnb = city.airbnb_url
     const kayak = city.kayak_car_rental_url
     const guide = city.getyourguide_url
-    
+
     return (
-        <div className="pt-5 d-flex align-items-center justify-content-center">
-            
-            {/* {id.cityId === "1" 
-            ? <City1Book city1={city1} />
-            : <City2Book city2= {city2} />
-            }   */}
+        <div class="grid place-items-center h-screen">
+            <div 
+            id="city-container" 
+            class="rounded-full w-80 h-112 md:w-4/12 py-12"
+            >
+                <p id="city-header">
+                    {name}
+                </p>
+                <p id="city-text">
+                    {airbnb}
+                </p>
+                <p id="city-text">
+                    {kayak}
+                </p>
+                <p id="city-text">
+                    {guide}
+                </p>
+            </div>
         </div>
     )
 }

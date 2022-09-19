@@ -92,6 +92,7 @@ const City2 = ( { city2 }) => {
                         contact-header
                         h-10
                         px-5
+                        mt-2
                         text-stone-50
                         bg-neutral-700
                         rounded-lg
