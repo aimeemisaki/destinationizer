@@ -4,7 +4,7 @@ import { apiResultReducer } from '../../data-and-functions/apiResultReducer';
 import { fetchReducer } from '../../data-and-functions/fetchReducer';
 import { attributesFilter, iconsFilter, budgetNumFilter, budgetTextFilter, populationFixer } from '../../data-and-functions/dataFilter';
 import './Compare.css';
-// import { Button, Card, Image, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 
 
@@ -41,33 +41,52 @@ const City1 = ({ city1 }) => {
   
   return (
     <>
-    <p id="name-text">
-      {name}
-    </p>
-    <p>{numBudget}</p>
-    <p>{textBudget}</p>
-    <p>{population}</p>
-    <div>
-      {attributes && attributes.map (
-        attribute => (
-          <div>
-            <p>{attribute}</p>
-          </div>
-        )
-      )} 
-    </div>
-    <div>
-      {icons && icons.map (
-        icon => (
-          <div>
-            <img 
-            src={icon+".svg"} 
-            alt="icons"
-            class="w-8 h-8"
-            />
-          </div>
-        )
-      )}
+    <div class="grid place-items-center h-screen">
+      <div id="search-container" class="rounded-full w-80 h-112 md:w-4/12">
+        <p id="city-header">
+          {name}
+        </p>
+        <p id="city-text">
+          {numBudget}
+        </p>
+        <p id="city-text">
+          {textBudget}
+        </p>
+        <p id="city-text">
+          {population}
+        </p>
+        <Row>
+          <Col>
+            <div>
+              {attributes && attributes.map (
+                attribute => (
+                  <div>
+                    <p id="city-attribute-text" class="py-1 text-right">
+                      {attribute}
+                    </p>
+                  </div>
+                )
+              )} 
+            </div>
+          </Col>
+          <Col>
+            <div>
+              {icons && icons.map (
+                icon => (
+                  <div class="pt-1.5">
+                    <img 
+                    src={icon+".svg"} 
+                    alt="icons"
+                    class="w-6 h-6"
+                    id="city-icon"
+                    />
+                  </div>
+                )
+              )}
+            </div>
+          </Col>
+        </Row>
+      </div>
     </div>
     
 

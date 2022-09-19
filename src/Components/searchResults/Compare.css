@@ -1,15 +1,23 @@
-body {
-    color: darkslateblue;
+#city-header {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+    color: white;
+    text-align: center;
 }
 
-.error-message {
-    color: red;
+#city-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    color: white;
+    text-align: center;
 }
 
-.btn.link {
+#city-attribute-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
     color: white;
 }
-
-.btn.visited, #btn.hover {
-    color: white;
+#city-icon {
+    filter: invert(1);
 }
+
