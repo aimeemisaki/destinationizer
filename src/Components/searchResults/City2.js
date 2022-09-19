@@ -101,7 +101,7 @@ const City2 = ( { city2 }) => {
                         hover:bg-stone-50
                         "
                         >
-                        <Link to='/book/1'>
+                        <Link to="/book" state={{result}}>
                             BOOK
                         </Link>
                     </button>
