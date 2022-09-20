@@ -19,7 +19,19 @@ I started by breaking down my website into smaller parts - first by pages, then 
 
 ## Screenshot of App
 
-<img width="1192" alt="Screen Shot 2022-07-22 at 13 38 24" src="https://user-images.githubusercontent.com/93743792/180562856-748f19a9-d402-4b0c-b18c-0c1b41694626.png">
+<img width="1110" alt="Screen Shot 2022-09-21 at 0 48 05" src="https://user-images.githubusercontent.com/93743792/191304816-2e06a717-de69-4236-8acc-10b30a1e2ba7.png">
+
+<img width="323" alt="Screen Shot 2022-09-21 at 0 08 12" src="https://user-images.githubusercontent.com/93743792/191309304-b70bf390-34a7-4b67-b663-72f7e92a9482.png">
+
+
+<img width="1109" alt="Screen Shot 2022-09-21 at 0 50 47" src="https://user-images.githubusercontent.com/93743792/191305414-87c8d29e-fd5b-4648-b71e-dfdd6f1aa3f9.png">
+
+<img width="324" alt="Screen Shot 2022-09-21 at 0 56 29" src="https://user-images.githubusercontent.com/93743792/191309369-7959141a-74c2-4d11-b5f3-0c7ca35b93a5.png">
+
+<img width="1441" alt="Screen Shot 2022-09-21 at 1 00 38" src="https://user-images.githubusercontent.com/93743792/191309483-b5302133-6e6b-4599-9736-2e68efb5f975.png">
+
+
+<img width="323" alt="Screen Shot 2022-09-21 at 0 57 30" src="https://user-images.githubusercontent.com/93743792/191309543-1950df44-a24b-4633-a1d0-5a05fc000fec.png">
 
 
 ## Wireframes
