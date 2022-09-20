@@ -79,29 +79,28 @@ const City1 = ({ city1 }) => {
           </Col>
         </Row>
         <div class="grid place-items-center">
+          <Link to="/book" state={{result}}>
             <button
             type="submit"
             id="search-button"
             class="
-                contact-header
-                h-10
-                px-5
-                mt-2
-                text-stone-50
-                bg-neutral-700
-                rounded-lg
-                transition-colors
-                duration-150
-                focus:shadow-outline
-                hover:bg-stone-50
-                "
-                >
-                <Link to="/book" state={{result}}
-                >
-                    BOOK
-                </Link>
+            contact-header
+            h-10
+            px-5
+            mt-2
+            text-stone-50
+            bg-neutral-700
+            rounded-lg
+            transition-colors
+            duration-150
+            focus:shadow-outline
+            hover:bg-stone-50
+            "
+            >
+              BOOK
             </button>
-          </div>
+          </Link>
+        </div>
           </>
           }
           {loading && <p id="city-header">LOADING...</p>}

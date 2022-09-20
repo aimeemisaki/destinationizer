@@ -73,10 +73,11 @@ const City2 = ( { city2 }) => {
                     </Col>
                 </Row>
                 <div class="grid place-items-center">
-                    <button
-                    type="submit"
-                    id="search-button"
-                    class="
+                    <Link to="/book" state={{result}}>
+                        <button
+                        type="submit"
+                        id="search-button"
+                        class="
                         contact-header
                         h-10
                         px-5
@@ -90,10 +91,9 @@ const City2 = ( { city2 }) => {
                         hover:bg-stone-50
                         "
                         >
-                        <Link to="/book" state={{result}}>
                             BOOK
-                        </Link>
-                    </button>
+                        </button>
+                    </Link>
                 </div>
                 </>
                 }
