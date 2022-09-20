@@ -46,8 +46,8 @@ const Search = () => {
     }
     return (
         <>
-        <video id="search-video" autoplay="autoplay" loop="true" muted defaultmuted playsinline src="https://assets.mixkit.co/videos/preview/mixkit-going-down-a-curved-highway-through-a-mountain-range-41576-large.mp4">
-  		</video>
+        <video id="search-video" autoPlay="autoplay" loop={true} muted defaultmuted="true" playsInline src="https://assets.mixkit.co/videos/preview/mixkit-going-down-a-curved-highway-through-a-mountain-range-41576-large.mp4">
+        </video>
         <div class="grid place-items-center h-screen">
             <div id="search-container" class="rounded-md w-80 h-112 md:w-5/12">
                 <header class="pb-8 md:pb-12 pt-10">

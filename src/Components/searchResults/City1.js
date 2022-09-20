@@ -22,10 +22,10 @@ const City1 = ({ city1 }) => {
   const [state, dispatch] = useReducer(apiResultReducer, initialState)
   const { loading, result, error } = state
 
-
   useEffect(() => {
       fetchReducer(dispatch, `${city1}`, "Oops! Couldn't find the city you searched for.")
   }, [city1])
+
 
   return (
     <div class="grid place-items-center h-screen">
@@ -38,14 +38,11 @@ const City1 = ({ city1 }) => {
         <p id="city-header">
           {result.data.attributes.name}
         </p>
-        <p id="city-text">
-          {budgetNumFilter(result.data.attributes)}
+        <p id="city-text" class="py-1">
+          Population: {populationFixer(result.data.attributes.population)}
         </p>
-        <p id="city-text">
-          {budgetTextFilter(result.data.attributes)}
-        </p>
-        <p id="city-text">
-          {populationFixer(result.data.attributes.population)}
+        <p id="city-text" class="py-1">
+          Budget: {budgetNumFilter(result.data.attributes)} / {budgetTextFilter(result.data.attributes)}
         </p>
         <Row>
           <Col>

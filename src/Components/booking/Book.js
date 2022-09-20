@@ -15,7 +15,7 @@ const Book = () => {
 
     return (
         <>
-            <video id="search-video" autoplay="autoplay" loop="true" muted defaultmuted playsinline src="https://assets.mixkit.co/videos/preview/mixkit-traveling-a-long-road-from-the-heights-42503-large.mp4"></video>
+            <video id="search-video" autoPlay="autoplay" loop={true} muted defaultmuted="true" playsInline src="https://assets.mixkit.co/videos/preview/mixkit-traveling-a-long-road-from-the-heights-42503-large.mp4"></video>
             <div class="grid place-items-center h-screen">
                 <div id="booking-container" class="rounded-full w-80 h-112 md:w-4/12 py-12">
                     <p id="booking-header">BOOKING <br/>{name}</p>

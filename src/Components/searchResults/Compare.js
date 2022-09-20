@@ -13,7 +13,7 @@ const Compare = () => {
 
     return (
         <>
-            <video id="search-video" autoplay="autoplay" loop="true" muted defaultmuted playsinline src="https://assets.mixkit.co/videos/preview/mixkit-car-on-a-road-through-the-forest-and-meadow-27001-large.mp4">
+            <video id="search-video" autoPlay="autoplay" loop={true} muted defaultmuted="true" playsInline src="https://assets.mixkit.co/videos/preview/mixkit-car-on-a-road-through-the-forest-and-meadow-27001-large.mp4">
   		    </video>
             <Carousel interval={4000}>
                 <Carousel.Item>

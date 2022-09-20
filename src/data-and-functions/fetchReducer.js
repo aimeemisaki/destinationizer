@@ -1,7 +1,7 @@
 export function fetchReducer(dispatch, endPoint, errorMessage) {
     const headers = {
         headers: {
-            'Authorization': 'Basic ZGRkNDdjODVkYzM5ZjU1ZjdlN2YzMmU5ZGQ0YmI0YzY6YjNmZTk5NjM4MWQ2MGQ2OTAwYmZjYmI3OWViYjExOGQ='
+            'Authorization': `Basic ${process.env.REACT_APP_AUTH_KEY}`
         }
     }
     dispatch({ type: 'loading'})
