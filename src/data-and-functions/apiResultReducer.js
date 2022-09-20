@@ -6,7 +6,6 @@ export function apiResultReducer(state, action) {
             return {...state, loading: false, result: action.res}
         case 'error':
             return {...state, loading: false, error: action.error}
-
         default:
             return state
     }

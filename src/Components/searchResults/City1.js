@@ -21,24 +21,11 @@ const City1 = ({ city1 }) => {
   // ===========================================================================
   const [state, dispatch] = useReducer(apiResultReducer, initialState)
   const { loading, result, error } = state
- 
+
 
   useEffect(() => {
-      fetchReducer(dispatch, `${city1}`, "Unexpected turbulence! Couldn't find the city you searched for.")
+      fetchReducer(dispatch, `${city1}`, "Oops! Couldn't find the city you searched for.")
   }, [city1])
-
-
-
-  if (!result) {
-    return null 
-  } 
-  const city = result.data.attributes
-  const name = city.name
-  const attributes = attributesFilter(result.included)
-  const icons = iconsFilter(result.included)
-  const numBudget = budgetNumFilter(city)
-  const textBudget = budgetTextFilter(city)
-  const population = populationFixer(city.population)
 
   return (
     <div class="grid place-items-center h-screen">
@@ -46,22 +33,24 @@ const City1 = ({ city1 }) => {
       id="city-container" 
       class="rounded-full w-80 h-112 md:w-4/12 py-12"
       >
+        {result && 
+        <>
         <p id="city-header">
-          {name}
+          {result.data.attributes.name}
         </p>
         <p id="city-text">
-          {numBudget}
+          {budgetNumFilter(result.data.attributes)}
         </p>
         <p id="city-text">
-          {textBudget}
+          {budgetTextFilter(result.data.attributes)}
         </p>
         <p id="city-text">
-          {population}
+          {populationFixer(result.data.attributes.population)}
         </p>
         <Row>
           <Col>
             <div>
-              {attributes && attributes.map (
+              {attributesFilter(result.included) && attributesFilter(result.included).map (
                 attribute => (
                   <div>
                     <p id="city-attribute-text" class="py-1 text-right">
@@ -74,7 +63,7 @@ const City1 = ({ city1 }) => {
           </Col>
           <Col>
             <div>
-              {icons && icons.map (
+              {iconsFilter(result.included) && iconsFilter(result.included).map (
                 icon => (
                   <div class="pt-1.5">
                     <img 
@@ -113,6 +102,10 @@ const City1 = ({ city1 }) => {
                 </Link>
             </button>
           </div>
+          </>
+          }
+          {loading && <p id="city-header">LOADING...</p>}
+          {error && <p id="city-header">{error}</p>}
       </div>
     </div>
   

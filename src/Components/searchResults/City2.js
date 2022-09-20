@@ -14,74 +14,62 @@ const City2 = ( { city2 }) => {
         result: null,
         error: ''
     }
-    // State hooks
+    // State hooks and Variables
     // ===========================================================================
     const [state, dispatch] = useReducer(apiResultReducer, initialState)
     const { loading, result, error } = state
 
 
     useEffect(() => {
-    fetchReducer(dispatch, `${city2}`, "Unexpected turbulence! Couldn't find the city you searched for.")
+    fetchReducer(dispatch, `${city2}`, "Oops! Couldn't find the city you searched for.")
     }, [city2])
-
-    // Variables
-    // ===========================================================================
-    if (!result) {
-    return null 
-    } 
-    const city = result.data.attributes
-    const name = city.name
-    const attributes = attributesFilter(result.included)
-    const icons = iconsFilter(result.included)
-    const numBudget = budgetNumFilter(city)
-    const textBudget = budgetTextFilter(city)
-    const population = populationFixer(city.population)
     
-
     return (
         <div class="grid place-items-center h-screen">
             <div id="city-container" class="rounded-full w-80 h-112 md:w-4/12">
+                {result &&
+                <>
                 <p id="city-header">
-                    {name}
+                    {result.data.attributes.name}
                 </p>
                 <p id="city-text">
-                    {numBudget}
+                    {budgetNumFilter(result.data.attributes)}
                 </p>
                 <p id="city-text">
-                    {textBudget}
+                    {budgetTextFilter(result.data.attributes)}
                 </p>
                 <p id="city-text">
-                    {population}
+                    {populationFixer(result.data.attributes.population)}
                 </p>
                 <Row>
                     <Col>
-                    <div>
-                        {attributes && attributes.map (
-                        attribute => (
-                            <div>
-                            <p id="city-attribute-text" class="py-1 text-right">
-                                {attribute}
-                            </p>
-                            </div>
-                        )
-                        )} 
-                    </div>
+                        <div>
+                            {attributesFilter(result.included) && attributesFilter(result.included).map (
+                            attribute => (
+                                <div>
+                                <p id="city-attribute-text" class="py-1 text-right">
+                                    {attribute}
+                                </p>
+                                </div>
+                            )
+                            )} 
+                        </div>
                     </Col>
                     <Col>
-                    <div>
-                        {icons && icons.map (
-                        icon => (
-                            <div class="pt-1.5">
-                            <img 
-                            src={icon+".svg"} 
-                            alt="icons"
-                            class="w-6 h-6"
-                            id="city-icon"
-                            />
-                            </div>
-                        )
-                        )}
-                    </div>
+                        <div>
+                            {iconsFilter(result.included) && iconsFilter(result.included).map (
+                            icon => (
+                                <div class="pt-1.5">
+                                <img 
+                                src={icon+".svg"} 
+                                alt="icons"
+                                class="w-6 h-6"
+                                id="city-icon"
+                                />
+                                </div>
+                            )
+                            )}
+                        </div>
                     </Col>
                 </Row>
                 <div class="grid place-items-center">
@@ -107,8 +95,12 @@ const City2 = ( { city2 }) => {
                         </Link>
                     </button>
                 </div>
+                </>
+                }
+                {loading && <p id="city-header">LOADING...</p>}
+                {error && <p id="city-header">{error}</p>}
             </div>
-      </div>
+        </div>
     
     )
 }
