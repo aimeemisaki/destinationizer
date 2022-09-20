@@ -21,16 +21,12 @@ I started by breaking down my website into smaller parts - first by pages, then 
 
 <img width="1110" alt="Screen Shot 2022-09-21 at 0 48 05" src="https://user-images.githubusercontent.com/93743792/191304816-2e06a717-de69-4236-8acc-10b30a1e2ba7.png">
 
-<img width="323" alt="Screen Shot 2022-09-21 at 0 08 12" src="https://user-images.githubusercontent.com/93743792/191309304-b70bf390-34a7-4b67-b663-72f7e92a9482.png">
-
-
 <img width="1109" alt="Screen Shot 2022-09-21 at 0 50 47" src="https://user-images.githubusercontent.com/93743792/191305414-87c8d29e-fd5b-4648-b71e-dfdd6f1aa3f9.png">
-
-<img width="324" alt="Screen Shot 2022-09-21 at 0 56 29" src="https://user-images.githubusercontent.com/93743792/191309369-7959141a-74c2-4d11-b5f3-0c7ca35b93a5.png">
 
 <img width="1441" alt="Screen Shot 2022-09-21 at 1 00 38" src="https://user-images.githubusercontent.com/93743792/191309483-b5302133-6e6b-4599-9736-2e68efb5f975.png">
 
-
+<img width="323" alt="Screen Shot 2022-09-21 at 0 08 12" src="https://user-images.githubusercontent.com/93743792/191309304-b70bf390-34a7-4b67-b663-72f7e92a9482.png">
+<img width="324" alt="Screen Shot 2022-09-21 at 0 56 29" src="https://user-images.githubusercontent.com/93743792/191309369-7959141a-74c2-4d11-b5f3-0c7ca35b93a5.png">
 <img width="323" alt="Screen Shot 2022-09-21 at 0 57 30" src="https://user-images.githubusercontent.com/93743792/191309543-1950df44-a24b-4633-a1d0-5a05fc000fec.png">
 
 
@@ -47,41 +43,61 @@ I started by breaking down my website into smaller parts - first by pages, then 
 
 ## Tech Stack
 
-* React
-* API
+* React Native
+* Third-Party API (RoadGoat API)
 * React-Bootstrap/Bootstrap
-* Javascript
-* CSS
+* Javascript 
+* Tailwindcss
 
 
 ```js
-const [city1Name, setCity1Name] = useState('');
-    const [city1Attributes, setCity1Attributes] = useState();
-    const [city1Population, setCity1Population] = useState('');
-    const [city1Icons, setCity1Icons] = useState();
-    
-    
-    
-    const getCity1 = () => {
-        if (city1) {
-        let city1Arr = []
-        let city1IconArr = []
-        for (let i=0; i<city1.included.length; i++) {
-            if (city1.included[i].type.includes('known_for')) {
-                city1Arr.push(city1.included[i].attributes.name)
-                city1IconArr.push(city1.included[i].attributes.icon)
-            } 
-        }
-        setCity1Attributes(city1Arr);
-        setCity1Icons(city1IconArr);
-
-        let newCity1Name = city1.data.attributes.name;
-        setCity1Name(newCity1Name)
-        
-        let newCity1Population = city1.data.attributes.population
-        setCity1Population(newCity1Population);
+function budgetNumFilter (input) {
+   const keys = Object.keys(input.budget)
+   const values = Object.values(input.budget)
+   for (let i=0; i < keys.length; i++ ) {
+     if (keys[i] === `${input.name}` ) {
+       const budgetObjs = values[0]
+       const budgetKeys = Object.keys(budgetObjs)
+       const budgetValues = Object.values(budgetObjs)
+       for (let j=0; j < budgetKeys.length; j++) {
+         if (budgetKeys[j] === 'value') {
+           return budgetValues[j]
+         }
+       }
+     }
+   }
+ }
+ 
+function fetchReducer(dispatch, endPoint, errorMessage) {
+    const headers = {
+        headers: {
+            'Authorization': `Basic ${process.env.REACT_APP_AUTH_KEY}`
         }
     }
+    dispatch({ type: 'loading'})
+        fetch(`https://api.roadgoat.com/api/v2/destinations/${endPoint}-usa`, headers)
+            .then(data => {
+                if(data.status === 404) {
+                    return dispatch({
+                        type: 'error',
+                        error: errorMessage
+                    })
+                } else if(data.status === 200 || data.status === 304) {
+                    return data.json()
+                }
+            })
+            .then(res => {
+                dispatch({type: 'success',
+                res: res
+                })
+            })
+            .catch(err => {
+                dispatch({
+                    type: 'error',
+                    error: `Unexpected turbulence! Please try again later. Error: ${err}`
+                })
+            })             
+} 
   ```
 
 ## User Stories 
@@ -96,11 +112,7 @@ const [city1Name, setCity1Name] = useState('');
 
 
 
-## Unsolved Problems / Major Hurdles
+## Future Goals
 
-* Getting API images
-
-## Future Stretch Goals 
-
-* Add a custom error message for each error status
-* Add an animation
+* Finding an image collection API based on cities to incorporate into results page
+* Allowing users to compare more cities
