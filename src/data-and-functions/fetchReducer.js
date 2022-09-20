@@ -26,6 +26,5 @@ export function fetchReducer(dispatch, endPoint, errorMessage) {
                     type: 'error',
                     error: `Unexpected turbulence! Please try again later. Error: ${err}`
                 })
-            })    
-                
+            })           
 }
