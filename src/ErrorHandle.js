@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Alert from 'react-bootstrap/Alert'
+
 
 const ErrorHandle = ({res}) => {
     const [error, setError] = useState('')

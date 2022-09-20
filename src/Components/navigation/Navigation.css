@@ -1,0 +1,13 @@
+#navbar {
+    background-color: #212321;
+    opacity: 0.7;
+}
+
+#navbar-brand {
+    font-family: 'Michroma', sans-serif;
+    color: white;
+}
+
+#navbar-brand:hover {
+    color: black;
+}

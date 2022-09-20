@@ -1,5 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import 'bootstrap/dist/css/bootstrap.min.css';
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Orbitron&family=Raleway:wght@300&display=swap');
 
 
 
