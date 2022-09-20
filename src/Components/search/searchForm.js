@@ -6,7 +6,7 @@ import { Form, Dropdown, Container, Row, Col } from 'react-bootstrap';
 import './Search.css';
 
 
-const Search = () => {
+const SearchForm = () => {
     // Initial state for searchReducer
     // ===========================================================================
     const initialState = {
@@ -190,4 +190,4 @@ const Search = () => {
     )
 }
 
-export default Search
+export default SearchForm
