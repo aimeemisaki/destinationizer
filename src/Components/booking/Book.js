@@ -19,10 +19,10 @@ const Book = () => {
             <div class="grid place-items-center h-screen">
                 <div id="booking-container" class="rounded-full w-80 h-112 md:w-4/12 py-12">
                     <p id="booking-header">BOOKING <br/>{name}</p>
-                    <div id="booking-inner-container">
+                    <div class="grid place-items-center">
                         <a href={airbnb}>
                             <div id="booking-circle" class="rounded-full w-32 h-32 md:w-32">
-                                <i id="booking-icon" class="fa-brands fa-airbnb my-3"></i>
+                                <i id="booking-icon" class="fa-brands fa-airbnb my-4"></i>
                                 <p id="booking-text">AIRBNB</p>
                             </div>
                         </a>

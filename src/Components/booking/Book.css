@@ -8,15 +8,13 @@
     align-items: center;
     text-align: center;
 }
-#booking-inner-container {
-    align-items: center;
-    text-align: center;
-}
+
 #booking-header {
     font-family: 'Orbitron', sans-serif;
     font-size: 15px;
     color: white;
     text-align: center;
+    margin-bottom: 2px;
 }
 
 #booking-text {
