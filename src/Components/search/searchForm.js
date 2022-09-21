@@ -1,5 +1,5 @@
-import { Link, } from 'react-router-dom';
-import { useReducer } from 'react';
+import { Link } from 'react-router-dom';
+import React, { useReducer } from 'react';
 import { statesArray } from '../../data-and-functions/statesArray';
 import { searchReducer } from '../../data-and-functions/searchReducer';
 import { Form, Dropdown, Container, Row, Col } from 'react-bootstrap';
