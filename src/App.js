@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
-import SearchForm from './components/search/searchForm'
-import Compare from './components/searchResults/Compare';
-import Navigation from './components/navigation/Navigation';
-import Book from './components/booking/Book';
+import SearchForm from './Components/Search/searchForm'
+import Compare from './Components/SearchResults/Compare';
+import Navigation from './Components/Navigation/Navigation';
+import Book from './Components/Booking/Book';
 
 function App() {
   return (
