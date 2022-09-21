@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import SearchForm from './Components/Search/searchForm'
+import SearchForm from './Components/Search/SearchForm'
 import Compare from './Components/SearchResults/Compare';
 import Navigation from './Components/Navigation/Navigation';
 import Book from './Components/Booking/Book';
