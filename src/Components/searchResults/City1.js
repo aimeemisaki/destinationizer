@@ -28,20 +28,20 @@ const City1 = ({ city1 }) => {
 
 
   return (
-    <div class="grid place-items-center h-screen">
+    <div className="grid place-items-center h-screen">
       <div 
       id="city-container" 
-      class="rounded-full w-80 h-112 md:w-4/12 py-12"
+      className="rounded-full w-80 h-112 md:w-4/12 py-12"
       >
         {result && 
         <>
         <p id="city-header">
           {result.data.attributes.name}
         </p>
-        <p id="city-text" class="py-1">
+        <p id="city-text" className="py-1">
           Population: {populationFixer(result.data.attributes.population)}
         </p>
-        <p id="city-text" class="py-1">
+        <p id="city-text" className="py-1">
           Budget: {budgetNumFilter(result.data.attributes)} / {budgetTextFilter(result.data.attributes)}
         </p>
         <Row>
@@ -50,7 +50,7 @@ const City1 = ({ city1 }) => {
               {attributesFilter(result.included) && attributesFilter(result.included).map (
                 attribute => (
                   <div>
-                    <p id="city-attribute-text" class="py-1 text-right">
+                    <p id="city-attribute-text" className="py-1 text-right">
                       {attribute}
                     </p>
                   </div>
@@ -62,11 +62,11 @@ const City1 = ({ city1 }) => {
             <div>
               {iconsFilter(result.included) && iconsFilter(result.included).map (
                 icon => (
-                  <div class="pt-1.5">
+                  <div className="pt-1.5">
                     <img 
                     src={icon+".svg"} 
                     alt="icons"
-                    class="w-6 h-6"
+                    className="w-6 h-6"
                     id="city-icon"
                     />
                   </div>
@@ -75,12 +75,12 @@ const City1 = ({ city1 }) => {
             </div>
           </Col>
         </Row>
-        <div class="grid place-items-center">
+        <div className="grid place-items-center">
           <Link to="/book" state={{result}}>
             <button
             type="submit"
             id="search-button"
-            class="
+            className="
             contact-header
             h-10
             px-5

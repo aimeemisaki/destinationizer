@@ -48,15 +48,15 @@ const SearchForm = () => {
         <>
         <video id="search-video" autoPlay="autoplay" loop={true} muted defaultmuted="true" playsInline src="https://assets.mixkit.co/videos/preview/mixkit-going-down-a-curved-highway-through-a-mountain-range-41576-large.mp4">
         </video>
-        <div class="grid place-items-center h-screen">
-            <div id="search-container" class="rounded-md w-80 h-112 md:w-5/12">
-                <header class="pb-8 md:pb-12 pt-10">
+        <div className="grid place-items-center h-screen">
+            <div id="search-container" className="rounded-md w-80 h-112 md:w-5/12">
+                <header className="pb-8 md:pb-12 pt-10">
                     <h1 id='search-header'>
 						LOOKING FOR YOUR NEXT DESTINATION?<br/>COMPARE HERE.
 					</h1>
                 </header>
                 <Form type="submit">
-                    <div class="grid place-items-center">
+                    <div className="grid place-items-center">
                         <Form.Group className="mb-3">
                             <Row>
                                 <Col>
@@ -68,7 +68,7 @@ const SearchForm = () => {
                                         onInput={cityHandler}
                                         value= {searchForm.inputCity1}
                                         id="search-input"
-                                        class=" 
+                                        className=" 
                                         contact-text
                                         block
                                         w-44
@@ -119,7 +119,7 @@ const SearchForm = () => {
                                         onInput={cityHandler}
                                         value={searchForm.inputCity2}
                                         id="search-input"
-                                        class=" 
+                                        className=" 
                                         contact-text
                                         block
                                         w-44
@@ -161,11 +161,11 @@ const SearchForm = () => {
                             </Row>
                         </Form.Group>
                     </div>
-                    <div class="grid place-items-center">
+                    <div className="grid place-items-center">
                         <button
                         type="submit"
                         id="search-button"
-                        class="
+                        className="
                             contact-header
                             h-10
                             px-5
