@@ -1,21 +1,31 @@
-# Destinationizer App
+# 🗺 Destinationizer App
 
 🤔 Wanting to find a destination before booking, but don't know which one to choose? 
 
 🏝 This app allows users to compare destinations they are interested in and book from there!
 
-💡 Users will be able to
+👩‍💻🧑‍💻 Users will be able to
 * choose two destinations
 * see two destinations' details at once
-* access Airbnb, Kayak and GetYourGuide URLs corresponding to the destination they chose
+* redirect directly from the app to the Airbnb, Kayak and GetYourGuide URLs corresponding to the destination they chose
 
-## Deployed Website Link
+## 🪄 Deployed Website Link
 
-Head over to (https://destinationizer.netlify.app/) to view more.
+Head over to the <a href='https://destinationizer.netlify.app'>website</a> to view more! 👀
 
-## Approach
+## 🧰 Tech Stack
+<a href='https://developer.mozilla.org/en-US/docs/Glossary/HTML5'><img src='https://i.ibb.co/Fx1ZFRF/html5.png' alt='HTML5' width=60/></a>
+<a href='https://developer.mozilla.org/en-US/docs/Web/CSS'><img src='https://i.ibb.co/n1pJ22s/css.png' alt='CSS' width=60></a>
+<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript'><img src='https://i.ibb.co/CndJZrj/javascript.png' alt='Javascript' width=60/></a>
+<a href='https://reactjs.org/'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png' alt='React.js' width=60></a>
+<a href='https://tailwindcss.com/'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1200px-Tailwind_CSS_Logo.svg.png' alt='TailwindCSS' width=60/></a>
+<a href='https://react-bootstrap.github.io/'><img src='https://i.ibb.co/1GWLBjK/reactbootstrapedit.png' alt='React Bootstrap' width=60/></a>
+<a href=''><img src='https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/postman-icon.png' width=60 /></a>
 
-I started by breaking down my website into smaller parts - first by pages, then by components, trying to clearly understand which one needed states and props to pass or be passed. A lot of time went into getting data from the RoadGoat API and learning React Bootstrap in our time constraint.
+
+## 💡 Approach
+
+I started by breaking down my website into smaller parts - first by pages, then by components, trying to clearly understand which one needed states and props to pass or be passed. A lot of time went into reading through the limited, at times incorrect documentation of the third-party RoadGoat API and learning Bootstrap and TailwindCSS in the very short time retraint; however, it was a challenge I was eager to overcome and learn from to prepare for working with other third-party APIs or even creating my own API in the future for others to use. 
 
 ## Screenshot of App
 
@@ -30,7 +40,7 @@ I started by breaking down my website into smaller parts - first by pages, then 
 <img width="323" alt="Screen Shot 2022-09-21 at 0 57 30" src="https://user-images.githubusercontent.com/93743792/191309543-1950df44-a24b-4633-a1d0-5a05fc000fec.png">
 
 
-## Wireframes
+## 🪟 Wireframes
 
 ![Wireframe 1] <img width="769" alt="Form:Welcome Page Wireframe" src="https://user-images.githubusercontent.com/93743792/180484304-f3175bcc-b807-45e7-91a5-a3db3d0bcfc1.png">
 
@@ -41,7 +51,7 @@ I started by breaking down my website into smaller parts - first by pages, then 
 ![Wireframe 3] <img width="799" alt="Booking Page Wireframe" src="https://user-images.githubusercontent.com/93743792/180484375-a9323a44-d051-4e03-a261-3180d089f3b5.png">
 
 
-## Tech Stack
+## 🧰 Tech Stack
 
 * React Native
 * Third-Party API (RoadGoat API)
@@ -49,56 +59,6 @@ I started by breaking down my website into smaller parts - first by pages, then 
 * Javascript 
 * Tailwindcss
 
-
-```js
-function budgetNumFilter (input) {
-   const keys = Object.keys(input.budget)
-   const values = Object.values(input.budget)
-   for (let i=0; i < keys.length; i++ ) {
-     if (keys[i] === `${input.name}` ) {
-       const budgetObjs = values[0]
-       const budgetKeys = Object.keys(budgetObjs)
-       const budgetValues = Object.values(budgetObjs)
-       for (let j=0; j < budgetKeys.length; j++) {
-         if (budgetKeys[j] === 'value') {
-           return budgetValues[j]
-         }
-       }
-     }
-   }
- }
- 
-function fetchReducer(dispatch, endPoint, errorMessage) {
-    const headers = {
-        headers: {
-            'Authorization': `Basic ${process.env.REACT_APP_AUTH_KEY}`
-        }
-    }
-    dispatch({ type: 'loading'})
-        fetch(`https://api.roadgoat.com/api/v2/destinations/${endPoint}-usa`, headers)
-            .then(data => {
-                if(data.status === 404) {
-                    return dispatch({
-                        type: 'error',
-                        error: errorMessage
-                    })
-                } else if(data.status === 200 || data.status === 304) {
-                    return data.json()
-                }
-            })
-            .then(res => {
-                dispatch({type: 'success',
-                res: res
-                })
-            })
-            .catch(err => {
-                dispatch({
-                    type: 'error',
-                    error: `Unexpected turbulence! Please try again later. Error: ${err}`
-                })
-            })             
-} 
-  ```
 
 ## User Stories 
 
@@ -112,7 +72,7 @@ function fetchReducer(dispatch, endPoint, errorMessage) {
 
 
 
-## Future Goals
+## 🏃‍♀️ Future Goals
 
 * Finding an image collection API based on cities to incorporate into results page
 * Allowing users to compare more cities
