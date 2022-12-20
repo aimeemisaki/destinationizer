@@ -20,7 +20,7 @@ Head over to the <a href='https://destinationizer.netlify.app'>website</a> to vi
 <a href='https://reactjs.org/'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png' alt='React.js' width=60></a>
 <a href='https://tailwindcss.com/'><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1200px-Tailwind_CSS_Logo.svg.png' alt='TailwindCSS' width=60/></a>
 <a href='https://react-bootstrap.github.io/'><img src='https://i.ibb.co/1GWLBjK/reactbootstrapedit.png' alt='React Bootstrap' width=60/></a>
-<a href=''><img src='https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/postman-icon.png' width=60 /></a>
+<a href='https://www.postman.com/company/about-postman/'><img src='https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/postman-icon.png' width=60 /></a>
 
 
 ## 💡 Approach
